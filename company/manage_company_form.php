@@ -67,3 +67,4 @@ include('../include/menu/menu.php');
 <?php include('../include/footer.php'); ?>
 <?php include('../include/script.php'); ?>
 <script src="js/manage_company.js" type="text/javascript"></script>
+<script src="../include/imageupload.js" type="text/javascript"></script>

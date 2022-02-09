@@ -2,6 +2,7 @@ function delete_row(id)
 {
     $("#delete_uid").val(id);
 }
+
 function inputbox_error_notification(input, msg)
 {
     $("#" + input).addClass('is-invalid');

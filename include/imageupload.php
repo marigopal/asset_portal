@@ -7,7 +7,7 @@ if (isset($_FILES['image_upload']['name'])) {
     $unique_name = uniqid();
     $newfilename = $unique_name . $file_ext;
     /* Location */
-    $location = "../../image_location/" . $newfilename;
+    $location = "../image_location/" . $newfilename;
     $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
     $imageFileType = strtolower($imageFileType);
     /* Valid extensions */

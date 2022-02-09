@@ -137,13 +137,13 @@ include('../include/stylesheet.php');
                                         <p>Companies</p>
                                     </a>
                                 </li>
-<!--                                <li class="nav-item">
-                                    <a href="../location/" class="nav-link">
+                                <li class="nav-item">
+                                    <a href="../locations/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Locations</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                               <!-- <li class="nav-item">
                                     <a href="../supplier/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Suppliers</p>
