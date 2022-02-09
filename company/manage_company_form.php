@@ -30,7 +30,7 @@ include('../include/menu/menu.php');
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Company Name</label>
-                                <input type="text" class="form-control" id="companyname" name="companyname" onclick = "input_remove_error_notification('companyname')">
+                                <input type="text" class="form-control " id="companyname" name="companyname" onclick = "input_remove_error_notification('companyname')">
                             </div>
                         </div>
                     </div>

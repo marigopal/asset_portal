@@ -8,6 +8,12 @@ function inputbox_error_notification(input, msg)
     $("#" + input).prop('title', msg);
     $("#" + input).focus();
 }
+function inputbox_success_notification(input, msg)
+{
+    $("#" + input).addClass('is-valid');
+    $("#" + input).prop('title', msg);
+    $("#" + input).focus();
+}
 function input_remove_error_notification(input)
 {
     $("#" + input).removeClass('is-invalid');

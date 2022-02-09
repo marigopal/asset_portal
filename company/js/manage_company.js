@@ -118,6 +118,7 @@ $("#companyname").change(function () {
 
                     } else
                     {
+                        inputbox_success_notification('companyname', 'Company Available');
                         remove_disabled('savecompanybutton');
                     }
                 }
