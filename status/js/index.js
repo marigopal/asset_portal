@@ -2,13 +2,13 @@ var url_string = window.location.href;
 var url = new URL(url_string);
 var _filter = url.searchParams.get("filter");
 $.ajax({
-    url: "viewlist/category_viewlist.php",
+    url: "viewlist/status_viewlist.php",
     type: "POST",
     data: {filter: _filter},
     cache: false,
     success: function (data) {
-        $('#_index_category_list').html(data);
-        generateDTable('category_list');
+        $('#_index_status_list').html(data);
+        generateDTable('status_list');
     }
 });
 $("#delete_button").click(function ()
@@ -17,7 +17,7 @@ $("#delete_button").click(function ()
     $.ajax
             ({
                 type: "POST",
-                url: "db/delete_category.php",
+                url: "db/delete_status.php",
                 data: 'uid=' + uid,
                 datatype: "html",
                 success: function (result)

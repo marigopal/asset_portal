@@ -116,6 +116,14 @@ include('../include/stylesheet.php');
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="../invoice/" class="nav-link">
+                                <i class="nav-icon fas fa-print"></i>
+                                <p>Invoice
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="../users/" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>Users Management
@@ -132,6 +140,34 @@ include('../include/stylesheet.php');
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="../status/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Status</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Models
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="../models/" class="nav-link">
+                                                <i class="fas fas-laptop nav-icon"></i>
+                                                <p>Models</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="../model_no/" class="nav-link">
+                                                <i class="fas fas-laptop nav-icon"></i>
+                                                <p>Model Number</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
                                     <a href="../category/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Category</p>
@@ -143,7 +179,7 @@ include('../include/stylesheet.php');
                                         <p>Manufacturers</p>
                                     </a>
                                 </li>
-                                 <li class="nav-item">
+                                <li class="nav-item">
                                     <a href="../suppliers/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Suppliers</p>
@@ -161,42 +197,6 @@ include('../include/stylesheet.php');
                                         <p>Companies</p>
                                     </a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                     <a href="../supplier/" class="nav-link">
-                                         <i class="far fa-circle nav-icon"></i>
-                                         <p>Suppliers</p>
-                                     </a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a href="../manufacturer/" class="nav-link">
-                                         <i class="far fa-circle nav-icon"></i>
-                                         <p>Manufacturer</p>
-                                     </a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a href="../asset_type/" class="nav-link">
-                                         <i class="far fa-circle nav-icon"></i>
-                                         <p>Type</p>
-                                     </a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a href="../asset_category/" class="nav-link">
-                                         <i class="far fa-circle nav-icon"></i>
-                                         <p>Category</p>
-                                     </a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a href="../asset_category_type/" class="nav-link">
-                                         <i class="far fa-circle nav-icon"></i>
-                                         <p>Category Type</p>
-                                     </a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a href="../asset_model/" class="nav-link">
-                                         <i class="far fa-circle nav-icon"></i>
-                                         <p>Asset Model</p>
-                                     </a>
-                                 </li>-->
                             </ul>
                         </li>
 

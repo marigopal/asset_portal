@@ -7,6 +7,38 @@ $(document).ready(function () {
         load_data(_id);
     }
 });
+function load_data(_id) {
+    $.ajax({
+        url: "db/get_category.php",
+        type: "POST",
+        data: {id: _id},
+        dataType: 'json',
+        success: function (result)
+        {
+            var len = result.length;
+            if (len != 0)
+            {
+                for (var i = 0; i < len; i++)
+                {
+                    var category_name = result[i]['category_name'];
+                    var type = result[i]['type'];
+                    var category_imagename = result[i]['category_imagename'];
+                    if (len > 0)
+                    {
+                        $("#category_uid").val(_id);
+                        $("#category_name").val(category_name);
+                        $("#type").val(type);
+                        $("#img_name").val(category_imagename);
+                        if (category_imagename != '') {
+                            $("#receipt_display").attr("src", "../image_location/" + category_imagename);
+                            removehidden_class('receipt_display');
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
 $("#category_name").change(function () {
     var category_name = $("#category_name").val();
 

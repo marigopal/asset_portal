@@ -2,7 +2,7 @@
 
 include('../../include/lib_page.php');
 $id = decrypt($_POST['id']);
-$sql = "SELECT * FROM `tbl_locations` WHERE `is_deleted` = '0' AND `category_uid` = '$id'";
+$sql = "SELECT * FROM `tbl_category` WHERE `is_deleted` = '0' AND `category_uid` = '$id'";
 $result = mysqli_query($con, $sql);
 $data_arr = array();
 while ($row = mysqli_fetch_array($result)) {

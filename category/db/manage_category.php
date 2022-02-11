@@ -11,10 +11,7 @@ $uid = "CATE_" . $uid;
 if ($isNew === 'true') {
     $sql = "INSERT INTO `tbl_category`(`category_uid`, `category_name`, `type`, `category_imagename`) VALUES ('$uid','$category_name','$type','$img_name')";
 } else if ($isNew === 'false') {
-    $sql = "UPDATE `tbl_locations` SET `location_name`='$locationsname',`manager`='$location_manager',"
-            . "`addressline1`='$location_address1',`addressline2`='$location_address2',`city`='$location_city',"
-            . "`state`='$location_state',`countries`='$countries',`zipcode`='$location_zip',"
-            . "`location_image`='$img_name' WHERE `location_uid` = '$locations_uid'";
+    $sql = "UPDATE `tbl_category` SET `category_name`='$category_name',`type`='$type',`category_imagename`='$img_name' WHERE `category_uid` = '$category_uid'";
 }
 //echo $sql;exit();
 if ($result = $con->query($sql)) {
