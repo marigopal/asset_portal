@@ -1,87 +1,61 @@
-$(document).ready(function(){
+$(document).ready(function () {
     load_countries('countries');
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var _id = url.searchParams.get("id");
+    if (_id != undefined) {
+        load_data(_id);
+    }
 });
-var url_string = window.location.href;
-var url = new URL(url_string);
-var _id = url.searchParams.get("id");
-$.ajax({
-    url: "db/get_location.php",
-    type: "POST",
-    data: {id: _id},
-    dataType: 'json',
-    success: function (result)
-    {
-        var len = result.length;
-        if (len != 0)
+function load_data(_id) {
+    $.ajax({
+        url: "db/get_location.php",
+        type: "POST",
+        data: {id: _id},
+        dataType: 'json',
+        success: function (result)
         {
-            for (var i = 0; i < len; i++)
+            var len = result.length;
+            if (len != 0)
             {
-                var location_name = result[i]['location_name'];
-                var manager = result[i]['manager'];
-                var addressline1 = result[i]['addressline1'];
-                var addressline2 = result[i]['addressline2'];
-                var city = result[i]['city'];
-                var state = result[i]['state'];
-                var countries = result[i]['countries'];
-                var zipcode = result[i]['zipcode'];
-                var location_image = result[i]['location_image'];
-                if (len > 0)
+                for (var i = 0; i < len; i++)
                 {
-                    $("#locations_uid").val(_id);
-                    $("#locationsname").val(location_name);
-                    $("#location_manager").val(manager);
-                    $("#location_address1").val(addressline1);
-                    $("#location_address2").val(addressline2);
-                    $("#location_city").val(city);
-                    $("#location_state").val(state);
-                    $("#countries").val(countries);
-                    load_countries('countries', countries);
-                    $("#location_zip").val(zipcode);
-                    $("#img_name").val(location_image);
-                    if (locationsname != '') {
-                        $("#receipt_display").attr("src", "../image_location/" + location_image);
-                        removehidden_class('receipt_display');
+                    var location_name = result[i]['location_name'];
+                    var manager = result[i]['manager'];
+                    var addressline1 = result[i]['addressline1'];
+                    var addressline2 = result[i]['addressline2'];
+                    var city = result[i]['city'];
+                    var state = result[i]['state'];
+                    var countries = result[i]['countries'];
+                    var zipcode = result[i]['zipcode'];
+                    var location_image = result[i]['location_image'];
+                    if (len > 0)
+                    {
+                        $("#locations_uid").val(_id);
+                        $("#locationsname").val(location_name);
+                        $("#location_manager").val(manager);
+                        $("#location_address1").val(addressline1);
+                        $("#location_address2").val(addressline2);
+                        $("#location_city").val(city);
+                        $("#location_state").val(state);
+                        $("#countries").val(countries);
+                        $("#location_zip").val(zipcode);
+                        $("#img_name").val(location_image);
+                        if (location_image != '') {
+                            $("#receipt_display").attr("src", "../image_location/" + location_image);
+                            removehidden_class('receipt_display');
+                        }
                     }
                 }
             }
         }
-    }
-});
-function load_countries(ddlName,selectedvalue) {
-    
-    $.ajax({
-        type: "POST",
-        url: "db/load_countries.php",
-        data: {},
-        success: function (_result)
-        {
-            var result = JSON.parse(_result.replace('\n', ''));
-            $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
-            $('#' + ddlName).append(select_li_txt);
-            if (result != '')
-            {
-                $.each(result, function (i) {
-                    var li_txt = "<option value='" + result[i].countries_uid + "'>" + result[i].countries_name + "</option>";
-                    $('#' + ddlName).append(li_txt);
-                });
-                if(selectedvalue != null){
-                    $('#' + ddlName).val(selectedvalue);
-                }
-                   
-            } else
-            {
-
-            }
-        },
-        error: function (err) {
-            console.log(err);
-        }
     });
 }
-$("#locationsname").change(function(){
+
+
+$("#locationsname").change(function () {
     var locationsname = $("#locationsname").val();
-    
+
     $.ajax
             ({
                 type: "POST",
@@ -90,7 +64,7 @@ $("#locationsname").change(function(){
                 datatype: "html",
                 success: function (result)
                 {
-                   if (result == 1)
+                    if (result == 1)
                     {
                         inputbox_error_notification('locationsname', 'Location Already in database');
                         add_disabled('savelocationbutton');
@@ -102,9 +76,9 @@ $("#locationsname").change(function(){
                     }
                 }
             });
-        
+
 });
-$("#savelocationbutton").click(function(){
+$("#savelocationbutton").click(function () {
     var isNew = false;
     var locations_uid = $("#locations_uid").val();
     var locationsname = $("#locationsname").val();

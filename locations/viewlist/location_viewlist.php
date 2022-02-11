@@ -9,15 +9,16 @@ if ($result->num_rows > 0) {
         <tr>
             <td><?= ++$sno; ?></td>
             <td hidden=""><?php echo $row['location_uid']; ?></td>
-            <td><?php echo $row['location_name']; ?></td>
             <td>
                 <?php
                 if ($row['location_image'] != '') {
                     ?>
                     <a href="../image_location/<?php echo $row['location_image']; ?>" target="_blank">
-                        <img src="../image_location/<?php echo $row['location_image']; ?>" alt="" width="50" height="50" id="receipt_display">
+                        <img src="../image_location/<?php echo $row['location_image']; ?>" alt="" width="30" height="20" id="receipt_display">
                     </a>
-                <?php } ?></td>
+                <?php } ?>
+            </td>
+            <td><?php echo $row['location_name']; ?></td>
             <td>
                 <?php
                 $loc_uid_encrypt = encrypt($row['location_uid']);

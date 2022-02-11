@@ -132,9 +132,21 @@ include('../include/stylesheet.php');
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../company/" class="nav-link">
+                                    <a href="../category/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Companies</p>
+                                        <p>Category</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../manufacturers/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manufacturers</p>
+                                    </a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a href="../suppliers/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Suppliers</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -143,42 +155,48 @@ include('../include/stylesheet.php');
                                         <p>Locations</p>
                                     </a>
                                 </li>
-                               <!-- <li class="nav-item">
-                                    <a href="../supplier/" class="nav-link">
+                                <li class="nav-item">
+                                    <a href="../company/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Suppliers</p>
+                                        <p>Companies</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="../manufacturer/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Manufacturer</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../asset_type/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Type</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../asset_category/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Category</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../asset_category_type/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Category Type</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../asset_model/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Asset Model</p>
-                                    </a>
-                                </li>-->
+                                <!-- <li class="nav-item">
+                                     <a href="../supplier/" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                         <p>Suppliers</p>
+                                     </a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a href="../manufacturer/" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                         <p>Manufacturer</p>
+                                     </a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a href="../asset_type/" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                         <p>Type</p>
+                                     </a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a href="../asset_category/" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                         <p>Category</p>
+                                     </a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a href="../asset_category_type/" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                         <p>Category Type</p>
+                                     </a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a href="../asset_model/" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                         <p>Asset Model</p>
+                                     </a>
+                                 </li>-->
                             </ul>
                         </li>
 

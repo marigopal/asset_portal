@@ -9,15 +9,17 @@ if ($result->num_rows > 0) {
         <tr>
             <td><?= ++$sno; ?></td>
             <td hidden=""><?php echo $row['company_uid']; ?></td>
-            <td><?php echo $row['company_name']; ?></td>
             <td>
                 <?php
                 if ($row['company_imagename'] != '') {
                     ?>
                     <a href="../image_location/<?php echo $row['company_imagename']; ?>" target="_blank">
-                        <img src="../image_location/<?php echo $row['company_imagename']; ?>" alt="" width="50" height="50" id="receipt_display">
+                        <img src="../image_location/<?php echo $row['company_imagename']; ?>" alt="" width="30" height="20" id="receipt_display">
                     </a>
-                <?php } ?></td>
+                <?php } ?>
+            </td>
+            <td><?php echo $row['company_name']; ?></td>
+            
             <td>
                 <?php
                 $comp_uid_encrypt = encrypt($row['company_uid']);

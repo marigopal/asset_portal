@@ -7,12 +7,12 @@ include('../include/model.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Company</h1>
+                    <h1>Suppliers</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="../home/">Home</a></li>
-                        <li class="breadcrumb-item active">Company</li>
+                        <li class="breadcrumb-item active">Suppliers</li>
                     </ol>
                 </div>
             </div>
@@ -25,20 +25,23 @@ include('../include/model.php');
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="manage_company_form"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" data-toggle="modal" data-target="#new_users" title="New"></a>
+                            <a href="manage_suppliers_form"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" data-toggle="modal" data-target="#new_users" title="New"></a>
                         </div>
                         <div class="card-body">
-                            <table id="company_list" class="table table-bordered table-striped">
+                            <table id="supplier_list" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th width="10%">#</th>
                                         <th hidden="">ID</th>
-                                        <th>Image</th>
-                                        <th>Company Name</th>
+                                        <th>Supplier Name</th>
+                                        <th>Supplier Address</th>
+                                        <th>Contact Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody id="_index_company_list"></tbody>
+                                <tbody id="_index_supplier_list"></tbody>
                             </table>
                         </div>
                     </div>

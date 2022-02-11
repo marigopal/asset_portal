@@ -33,8 +33,8 @@ include('../include/model.php');
                                     <tr>
                                         <th width="10%">#</th>
                                         <th hidden="">ID</th>
+                                        <th>Image</th>
                                         <th>Location</th>
-                                        <th>Location Image</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
