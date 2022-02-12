@@ -8,7 +8,7 @@ include('../include/stylesheet.php');
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button" id="menu_button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -108,7 +108,7 @@ include('../include/stylesheet.php');
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../asset_components/" class="nav-link">
+                                    <a href="../component/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Component</p>
                                     </a>
@@ -204,3 +204,8 @@ include('../include/stylesheet.php');
                 </nav>
             </div>
         </aside>
+        <script>
+$(document).ready(function() {
+   $("#menu_button").trigger('click');
+});
+</script>

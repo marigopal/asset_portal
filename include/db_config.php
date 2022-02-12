@@ -6,6 +6,5 @@ if (!$con) {
     // header("Location: /db_fail");
     die("Connection failed: " . mysqli_connect_error());
 }
-
 $connect = new PDO("mysql:host=localhost;dbname=db_asset", "root", "");
 ?>

@@ -7,12 +7,12 @@ include('../include/model.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Invoice</h1>
+                    <h1>Components</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="../home/">Home</a></li>
-                        <li class="breadcrumb-item active">Invoice</li>
+                        <li class="breadcrumb-item active">Components</li>
                     </ol>
                 </div>
             </div>
@@ -25,25 +25,26 @@ include('../include/model.php');
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="add"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" data-toggle="modal" data-target="#new_users" title="New"></a>
+                            <a href="manage_suppliers_form"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" data-toggle="modal" data-target="#new_users" title="New"></a>
                         </div>
                         <div class="card-body">
-                            <table id="invoice_list" class="table table-bordered table-striped">
+                            <table id="component_list" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th width="10%">#</th>
                                         <th hidden="">ID</th>
-                                        <th>Inv Date</th>
                                         <th>Inv No</th>
-                                        <th>Supplier</th>
-                                        <th>PO Date</th>
-                                        <th>PO Number</th>
-                                        <th>Cost</th>
-                                        <th>Invoice</th>
+                                        <th>Asset Tag</th>
+                                        <th>Category</th>
+                                        <th>Manufacturer</th>
+                                        <th>Model</th>
+                                        <th>Model No</th>
+                                        <th>Serial</th>
+                                        <th>warranty</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody id="_index_invloice_list"></tbody>
+                                <tbody id="_index_component_list"></tbody>
                             </table>
                         </div>
                     </div>

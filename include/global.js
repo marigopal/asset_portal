@@ -3,7 +3,6 @@ function delete_row(id)
     $("#delete_uid").val(id);
 }
 function load_countries(ddlName, selectedvalue) {
-
     $.ajax({
         type: "POST",
         url: "../include/db/load_countries.php",
@@ -21,13 +20,177 @@ function load_countries(ddlName, selectedvalue) {
                     $('#' + ddlName).append(li_txt);
                 });
                 if (selectedvalue != null) {
-                    $("#countries").val(selectedvalue);
+                    $('#' + ddlName).val(selectedvalue);
+                }
+            } 
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+function load_locations(ddlName, selectedvalue) {
+    $.ajax({
+        type: "POST",
+        url: "../include/db/load_locations.php",
+        data: {},
+        success: function (_result)
+        {
+            var result = JSON.parse(_result.replace('\n', ''));
+            $('#' + ddlName).empty();
+            var select_li_txt = "<option value='0'>Select</option>";
+            $('#' + ddlName).append(select_li_txt);
+            if (result != '')
+            {
+                $.each(result, function (i) {
+                    var li_txt = "<option value='" + result[i].location_uid + "'>" + result[i].location_name + "</option>";
+                    $('#' + ddlName).append(li_txt);
+                });
+                if (selectedvalue != null) {
+                    $('#' + ddlName).val(selectedvalue);
                 }
 
-            } else
+            } 
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+function load_suppliers(ddlName, selectedvalue) {
+    $.ajax({
+        type: "POST",
+        url: "../include/db/load_suppliers.php",
+        data: {},
+        success: function (_result)
+        {
+            var result = JSON.parse(_result.replace('\n', ''));
+            $('#' + ddlName).empty();
+            var select_li_txt = "<option value='0'>Select</option>";
+            $('#' + ddlName).append(select_li_txt);
+            if (result != '')
             {
+                $.each(result, function (i) {
+                    var li_txt = "<option value='" + result[i].supplier_uid + "'>" + result[i].supplier_name + "</option>";
+                    $('#' + ddlName).append(li_txt);
+                });
+                if (selectedvalue != null) {
+                    $('#' + ddlName).val(selectedvalue);
+                }
 
-            }
+            } 
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+function load_assetcategory(ddlName, selectedvalue) {
+    $.ajax({
+        type: "POST",
+        url: "../include/db/load_assetcategory.php",
+        data: {},
+        success: function (_result)
+        {
+            var result = JSON.parse(_result.replace('\n', ''));
+            $('#' + ddlName).empty();
+            var select_li_txt = "<option value='0'>Select</option>";
+            $('#' + ddlName).append(select_li_txt);
+            if (result != '')
+            {
+                $.each(result, function (i) {
+                    var li_txt = "<option value='" + result[i].category_uid + "'>" + result[i].category_name + "</option>";
+                    $('#' + ddlName).append(li_txt);
+                });
+                if (selectedvalue != null) {
+                    $('#' + ddlName).val(selectedvalue);
+                }
+
+            } 
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+function load_manufacturer(ddlName, selectedvalue) {
+    $.ajax({
+        type: "POST",
+        url: "../include/db/load_manufacturer.php",
+        data: {},
+        success: function (_result)
+        {
+            var result = JSON.parse(_result.replace('\n', ''));
+            $('#' + ddlName).empty();
+            var select_li_txt = "<option value='0'>Select</option>";
+            $('#' + ddlName).append(select_li_txt);
+            if (result != '')
+            {
+                $.each(result, function (i) {
+                    var li_txt = "<option value='" + result[i].manufacturers_uid + "'>" + result[i].manufacturers_name + "</option>";
+                    $('#' + ddlName).append(li_txt);
+                });
+                if (selectedvalue != null) {
+                    $('#' + ddlName).val(selectedvalue);
+                }
+
+            } 
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+function load_model(ddlName, selectedvalue) {
+    $.ajax({
+        type: "POST",
+        url: "../include/db/load_model.php",
+        data: {},
+        success: function (_result)
+        {
+            var result = JSON.parse(_result.replace('\n', ''));
+            $('#' + ddlName).empty();
+            var select_li_txt = "<option value='0'>Select</option>";
+            $('#' + ddlName).append(select_li_txt);
+            if (result != '')
+            {
+                $.each(result, function (i) {
+                    var li_txt = "<option value='" + result[i].models_uid + "'>" + result[i].models_name + "</option>";
+                    $('#' + ddlName).append(li_txt);
+                });
+                if (selectedvalue != null) {
+                    $('#' + ddlName).val(selectedvalue);
+                }
+
+            } 
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+function load_modelno(ddlName, selectedvalue) {
+    $.ajax({
+        type: "POST",
+        url: "../include/db/load_modelno.php",
+        data: {},
+        success: function (_result)
+        {
+            var result = JSON.parse(_result.replace('\n', ''));
+            $('#' + ddlName).empty();
+            var select_li_txt = "<option value='0'>Select</option>";
+            $('#' + ddlName).append(select_li_txt);
+            if (result != '')
+            {
+                $.each(result, function (i) {
+                    var li_txt = "<option value='" + result[i].modelno_uid + "'>" + result[i].model_number + "</option>";
+                    $('#' + ddlName).append(li_txt);
+                });
+                if (selectedvalue != null) {
+                    $('#' + ddlName).val(selectedvalue);
+                }
+
+            } 
         },
         error: function (err) {
             console.log(err);
@@ -120,6 +283,13 @@ function toastr_error()
     setTimeout(function () {
 //        window.location.reload();
         table.ajax.reload();
+    }, 2000);
+}
+function toastr_error_pagereload()
+{
+    toastr.error('Something Went Wrong..!Please tray again..');
+    setTimeout(function () {
+        window.location.reload();
     }, 2000);
 }
 function toastr_error_msg(msg)
