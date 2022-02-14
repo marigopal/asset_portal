@@ -11,14 +11,19 @@ if ($result->num_rows > 0) {
             <td><?= ++$sno; ?></td>
             <td hidden=""><?php echo $row['invoice_uid']; ?></td>
             <td><?php echo $row['invoice_date']; ?></td>
-            <td><?php echo $row['invoice_no']; ?></td>
+            <td>
+                <a href="../component/index?id=<?php echo $row['invoice_no']; ?>" ><?php echo $row['invoice_no']; ?></a>
+                </td>
             <td><?php echo $row['supplier_name']; ?></td>
             <td><?php echo $row['purchase_date']; ?></td>
             <td><?php echo $row['purchase_no']; ?></td>
             <td><?php echo $row['purchase_cost']; ?></td>
             <td><?php echo $row['purchase_cost']; ?></td>
             <td>
-                <a href="#" data-toggle="modal" data-target="#leads_project_modal" onclick="update_lead_project('<?php echo $row['invoice_uid'] ?>');"><i class="fas fa-edit"></i></a>
+                <?php
+                $invoice_uid_encrypt = encrypt($row['invoice_uid']);
+                ?>
+                <a href="../invoice/update?id=<?php echo $invoice_uid_encrypt; ?>" ><i class="fas fa-edit"></i></a>
                 <a href="#" data-toggle="modal" data-target="#leads_task_modal" onclick="add_task('<?php echo $row['invoice_uid'] ?>');"><i class="fas fa-tasks"></i></a>
             </td>
         </tr>

@@ -25,7 +25,7 @@ include('../include/model.php');
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="add"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" data-toggle="modal" data-target="#new_users" title="New"></a>
+                            <a href="insert"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" data-toggle="modal" data-target="#new_users" title="New"></a>
                         </div>
                         <div class="card-body">
                             <table id="invoice_list" class="table table-bordered table-striped">

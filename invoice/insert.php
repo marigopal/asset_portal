@@ -202,7 +202,7 @@ include('../include/model.php');
                                                     <div class="row">
                                                         <div class="container">
                                                             <div>
-                                                                <a name="add" id="add" class="add"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" title="New"></a>
+                                                                <a name="add" id="add" class="add_component"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" title="New"></a>
                                                             </div>
                                                             <br />
                                                             <div class="table-responsive">
@@ -232,4 +232,4 @@ include('../include/model.php');
 </div>
 <?php include('../include/footer.php'); ?>
 <?php include('../include/script.php'); ?>
-<script src="js/insert_component.js" type="text/javascript"></script>
+<script src="js/insert.js" type="text/javascript"></script>

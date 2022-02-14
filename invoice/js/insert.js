@@ -5,15 +5,15 @@ $(document).ready(function () {
     load_manufacturer('manufacturer');
     load_model('asset_model');
     load_modelno('model_no');
-    $(document).on('click', '.add', function () {
+    $(document).on('click', '.add_component', function () {
         var html = '';
         html += '<tr>';
         html += '<td><input type="text" name="serial[]" class="form-control serial" /></td>';
         html += '<td><input type="text" name="remarks[]" class="form-control size" /></td>';
-        html += '<td><button type="button" name="remove" class="btn btn-danger btn-sm remove"><span class="glyphicon glyphicon-minus"></span></button></td></tr>';
+        html += '<td><button type="button" name="remove" class="btn btn-danger btn-sm remove_component"><span class="glyphicon glyphicon-minus"></span></button></td></tr>';
         $('#item_table').append(html);
     });
-    $(document).on('click', '.remove', function () {
+    $(document).on('click', '.remove_component', function () {
         $(this).closest('tr').remove();
     });
     $('#insert_form').on('submit', function (event) {
