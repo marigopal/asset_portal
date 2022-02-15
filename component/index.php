@@ -1,6 +1,7 @@
 <?php
 include('../include/menu/menu.php');
 include('../include/model.php');
+include ("modals/asset_assign_user.php");
 ?>
 <div class="content-wrapper">
     <section class="content-header">
@@ -41,6 +42,7 @@ include('../include/model.php');
                                         <th>Model No</th>
                                         <th>Serial</th>
                                         <th>warranty</th>
+                                        <th>Assigned User</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
