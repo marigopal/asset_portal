@@ -11,7 +11,7 @@ $sql = "SELECT a.component_uid,a.asset_tag,a.assettag_number,a.warranty,a.inv_ui
         . "LEFT JOIN tbl_modelno e on e.modelno_uid = a.model_no "
         . "LEFT JOIN tbl_invoice f on f.invoice_uid = a.inv_uid "
         . "INNER JOIN tbl_type g on g.type_uid = b.type"
-        . " WHERE a.is_deleted = '0' and b.type = '3' ORDER BY f.invoice_date ASC";
+        . " WHERE a.is_deleted = '0' and b.type = '5' ORDER BY f.invoice_date ASC";
 //echo $sql;exit();
 $result = $con->query($sql);
 if ($result->num_rows > 0) {

@@ -1,6 +1,7 @@
 $(document).ready(function () {
     load_locations('location');
     load_suppliers('supplier');
+    load_suppliers('supplier_select');
     load_assetcategory('asset_category');
     load_manufacturer('manufacturer');
     load_model('asset_model');
@@ -59,6 +60,7 @@ $(window).on('load', function () {
 $("#radioPrimary2").click(function () {
     remove_disabled('save_confirm_button');
     removehidden_class('invoicenumber_div');
+    removehidden_class('confirm_supplier_div');
 });
 $("#save_confirm_button").click(function () {
 
@@ -68,3 +70,42 @@ $("#asset_category").change(function () {
     $("#asset_category_name").val(assetcategory_text);
 
 })
+function load_invoicelist(ddlName, selectedvalue)
+{
+    var supplier_select= $("#supplier_select").val();
+    $.ajax({
+        type: "POST",
+        url: "db/load_invoice.php",
+        data: {supplier_select: supplier_select},
+        success: function (_result)
+        {
+            var result = JSON.parse(_result.replace('\n', ''));
+            $('#' + ddlName).empty();
+            var select_li_txt = "<option value='0'>Select</option>";
+            $('#' + ddlName).append(select_li_txt);
+            if (result != '')
+            {
+                $.each(result, function (i) {
+                    var li_txt = "<option value='" + result[i].invoice_uid + "'>" + result[i].invoice_no + "</option>";
+                    $('#' + ddlName).append(li_txt);
+                });
+                if (selectedvalue != null) {
+                    $('#' + ddlName).val(selectedvalue);
+                }
+            } 
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+
+$("#save_confirm_button").click(function(){
+    var invoice_select = $("#invoice_select").val();
+
+    $("#inv_uid").val(invoice_select);
+    addhidden_class('pod_div');
+    addhidden_class('invoice_div');
+    $('#confirm_model').modal('toggle');
+     
+});

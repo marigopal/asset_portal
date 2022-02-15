@@ -26,11 +26,19 @@ include('../include/model.php');
                                 </label>
                             </div>
                         </div>
+                        <div class="col-sm-6 d-none" id="confirm_supplier_div">
+                            <div class="form-group">
+                                <label> Supplier
+                                </label>
+                                <select class="form-control select2bs4" id="supplier_select" name="supplier_select" onchange = "load_invoicelist('invoice_select')">
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-sm-6 d-none" id="invoicenumber_div">
                             <div class="form-group">
                                 <label> Invoice Number
                                 </label>
-                                <select class="form-control select2bs4" id="invoice_select" name="invoice_select">
+                                <select class="form-control select2bs4" id="invoice_select" name="invoice_select" >
                                 </select>
                             </div>
                         </div>
@@ -57,7 +65,7 @@ include('../include/model.php');
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="../home/">Home</a></li>
-                         <li class="breadcrumb-item"><a href="index">Invoice</a></li>
+                        <li class="breadcrumb-item"><a href="index">Invoice</a></li>
                         <li class="breadcrumb-item active">Add Invoice</li>
                     </ol>
                 </div>
@@ -92,6 +100,15 @@ include('../include/model.php');
                                             <div class="bs-stepper-content">
                                                 <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
                                                     <div class="row">
+                                                        <div class="col-12 col-sm-4 d-none">
+                                                            <div class="form-group">
+                                                                <label>invoice uid
+                                                                </label>
+
+                                                                <input type="text" class="form-control" id="inv_uid" name="inv_uid" readonly/>
+
+                                                            </div>
+                                                        </div>
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Asset Category
@@ -122,7 +139,7 @@ include('../include/model.php');
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row" id="pod_div">
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Purchase Order Date</label>
@@ -147,7 +164,7 @@ include('../include/model.php');
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row" id="invoice_div">
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Supplier</label>

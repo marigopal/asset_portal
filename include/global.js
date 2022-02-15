@@ -29,6 +29,7 @@ function load_countries(ddlName, selectedvalue) {
         }
     });
 }
+
 function load_locations(ddlName, selectedvalue) {
     $.ajax({
         type: "POST",
@@ -256,6 +257,10 @@ function add_disabled(id)
 {
     $("#" + id).attr('disabled', true);
 }
+function add_hidden(id)
+{
+    $("#" + id).attr('hidden', true);
+}
 function toastr_success(msg, location)
 {
     toastr.success(msg);
@@ -322,4 +327,8 @@ function modal_hide(id)
 function removehidden_class(id)
 {
     $("#" + id).removeClass('d-none');
+}
+function addhidden_class(id)
+{
+    $("#" + id).addClass('d-none');
 }

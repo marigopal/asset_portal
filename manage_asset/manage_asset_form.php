@@ -22,11 +22,18 @@ include('../include/menu/menu.php');
         <div class="container-fluid">
             <div class="card card-default">
                 <div class="card-body">
-                     <div class="row d-flex justify-content-center">
+                    <div class="row d-flex justify-content-center">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label>Catagory</label>
                                 <select class="form-control" id="category" name="category" readonly=""></select>   
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6" hidden="">
+                            <div class="form-group">
+                                <label>Asset Category Name
+                                </label>
+                                <input type="text" class="form-control" id="asset_category_name" name="asset_category_name" readonly/>
                             </div>
                         </div>
                     </div>
@@ -35,7 +42,7 @@ include('../include/menu/menu.php');
                             <label>Unique ID</label>
                             <input type="text" class="form-control" id="comp_uid" name="comp_uid">
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6" id="assettag_div">
                             <div class="form-group">
                                 <label>Asset Tag</label>
                                 <input type="text" class="form-control" id="asset_tag" name="asset_tag" readonly="">
@@ -52,7 +59,7 @@ include('../include/menu/menu.php');
                         </div>
                     </div>
 
-                   
+
                     <div class="row d-flex justify-content-center">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
@@ -123,8 +130,8 @@ include('../include/menu/menu.php');
                     <div class="row d-flex justify-content-center">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href = 'index';">Close</button>
-                                <button type="button" class="btn btn-primary" id="saveinvoicebutton" name="saveinvoicebutton">Save</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_button">Close</button>
+                                <button type="button" class="btn btn-primary" id="savecomponent_btn" name="savecomponent_btn">Save</button>
                             </div>
                         </div>
                     </div>
@@ -135,5 +142,5 @@ include('../include/menu/menu.php');
 </div>
 <?php include('../include/footer.php'); ?>
 <?php include('../include/script.php'); ?>
-<script src="js/update.js" type="text/javascript"></script>
+<script src="js/manage_asset.js" type="text/javascript"></script>
 <script src="../include/imageupload.js" type="text/javascript"></script>

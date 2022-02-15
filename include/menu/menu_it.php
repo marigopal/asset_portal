@@ -90,27 +90,33 @@ include('../include/stylesheet.php');
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../asset_hardware/" class="nav-link">
+                                    <a href="../component/asset" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Hardware</p>
+                                        <p>Asset</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="../asset_license/" class="nav-link">
+<!--                                <li class="nav-item">
+                                    <a href="../asset_accessories/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>License</p>
                                     </a>
-                                </li>
+                                </li>-->
                                 <li class="nav-item">
-                                    <a href="../asset_accessories/" class="nav-link">
+                                    <a href="../component/accessory" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Accessory</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../component/" class="nav-link">
+                                    <a href="../component/component" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Component</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../component/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All Reports</p>
                                     </a>
                                 </li>
                             </ul>

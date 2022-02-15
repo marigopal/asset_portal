@@ -2,6 +2,7 @@
 <?php
 
 include('../../include/lib_page.php');
+$inv_uid = $_POST['inv_uid'];
 $asset_category = $_POST['asset_category'];
 $asset_category_name = $_POST['asset_category_name'];
 $asset_category_name = strtoupper(substr($asset_category_name, 0, 3));
@@ -18,50 +19,50 @@ $invno = $_POST['invno'];
 $manufacturer = $_POST['manufacturer'];
 $asset_model = $_POST['asset_model'];
 $model_no = $_POST['model_no'];
-$uid = uniqid();
-$uid = "INV_" . $uid;
-$inv_query = "INSERT INTO `tbl_invoice` (`invoice_uid`, `invoice_date`, `invoice_no`, `supplier`, "
-        . "`purchase_date`, `purchase_no`, `purchase_cost`) VALUES ('$uid','$invdate','$invno','$supplier',"
-        . "'$pod','$pon','$poc')";
-$statement = $connect->prepare($inv_query);
 
-$statement->execute();
-$result = $statement->fetchAll();
-if (isset($result)) {
-    $get_maxasset_no = "SELECT Max(assettag_number) as new_assettag_number FROM `tbl_component` where category = '$asset_category'";
-    $result = mysqli_query($con, $get_maxasset_no);
-    $data_arr = array();
-    while ($row = mysqli_fetch_array($result)) {
-        $new_assettag_number = $row['new_assettag_number'];
-        if ($new_assettag_number == null) {
-            $new_assettag_number = 0;
-        }
+if ($inv_uid == '') {
+    $uid = uniqid();
+    $inv_uid = "INV_" . $uid;
+    $inv_query = "INSERT INTO `tbl_invoice` (`invoice_uid`, `invoice_date`, `invoice_no`, `supplier`, "
+            . "`purchase_date`, `purchase_no`, `purchase_cost`) VALUES ('$inv_uid','$invdate','$invno','$supplier',"
+            . "'$pod','$pon','$poc')";
+    $statement = $connect->prepare($inv_query);
+
+    $statement->execute();
+    $result = $statement->fetchAll();
+}
+
+$get_maxasset_no = "SELECT Max(assettag_number) as new_assettag_number FROM `tbl_component` where category = '$asset_category'";
+$result = mysqli_query($con, $get_maxasset_no);
+$data_arr = array();
+while ($row = mysqli_fetch_array($result)) {
+    $new_assettag_number = $row['new_assettag_number'];
+    if ($new_assettag_number == null) {
+        $new_assettag_number = 0;
     }
-    if (isset($_POST["serial"])) {
-        for ($count = 0; $count < count($_POST["serial"]); $count++) {
-            $new_assettag_number = $new_assettag_number + 1;
-            $asset_tag = invoice_num($new_assettag_number, 7, "$asset_category_name");
-            $comp_uid = uniqid();
-            $component_uid = "COMP_" . $comp_uid;
-            $serial = $_POST["serial"][$count];
-            $remarks = $_POST["remarks"][$count];
-            $query = "INSERT INTO `tbl_component`(`component_uid`, `inv_uid`, `asset_tag`, `assettag_number`, `warranty`, `category`, `manufacturer`, `model`, "
-                    . "`model_no`, `serialno`, `remarks`) VALUES ('$component_uid','$uid',"
-                    . "'$asset_tag','$new_assettag_number','$warranty','$asset_category','$manufacturer',"
-                    . "'$asset_model','$model_no','$serial', '$remarks')";
+}
+if (isset($_POST["serial"])) {
+    for ($count = 0; $count < count($_POST["serial"]); $count++) {
+        $new_assettag_number = $new_assettag_number + 1;
+        $asset_tag = invoice_num($new_assettag_number, 7, "$asset_category_name");
+        $comp_uid = uniqid();
+        $component_uid = "COMP_" . $comp_uid;
+        $serial = $_POST["serial"][$count];
+        $remarks = $_POST["remarks"][$count];
+        $query = "INSERT INTO `tbl_component`(`component_uid`, `inv_uid`, `asset_tag`, `assettag_number`, `warranty`, `category`, `manufacturer`, `model`, "
+                . "`model_no`, `serialno`, `remarks`) VALUES ('$component_uid','$inv_uid',"
+                . "'$asset_tag','$new_assettag_number','$warranty','$asset_category','$manufacturer',"
+                . "'$asset_model','$model_no','$serial', '$remarks')";
 
-            $statement = $connect->prepare($query);
-            $statement->execute();
-        }
-        $result = $statement->fetchAll();
-        if (isset($result)) {
-            echo '1';
-        }
-    } else {
-        echo "2";
+        $statement = $connect->prepare($query);
+        $statement->execute();
+    }
+    $result = $statement->fetchAll();
+    if (isset($result)) {
+        echo '1';
     }
 } else {
-    echo '3';
+    echo "2";
 }
 
 function invoice_num($input, $pad_len = 7, $prefix = null) {

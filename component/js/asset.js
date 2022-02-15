@@ -2,7 +2,7 @@ var url_string = window.location.href;
 var url = new URL(url_string);
 var _filter = url.searchParams.get("filter");
 $.ajax({
-    url: "viewlist/all_assets_viewlist.php",
+    url: "viewlist/asset_viewlist.php",
     type: "POST",
     data: {filter: _filter},
     cache: false,
