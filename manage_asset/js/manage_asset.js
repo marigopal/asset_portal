@@ -4,6 +4,7 @@ $(document).ready(function () {
     load_manufacturer('manufacturer');
     load_model('model');
     load_modelno('modelno');
+    load_users('user');
     var url_string = window.location.href;
 var url = new URL(url_string);
 var _id = url.searchParams.get("id");
@@ -69,6 +70,7 @@ $("#savecomponent_btn").click(function () {
     var modelno = $("#modelno").val();
     var serial = $("#serial").val();
     var remarks = $("#remarks").val();
+    var user = $("#user").val();
     add_disabled('savecomponent_btn');
     if (comp_uid == '')
     {
@@ -79,7 +81,7 @@ $("#savecomponent_btn").click(function () {
                 ({
                     type: "POST",
                     url: "db/db_manage_asset.php",
-                    data: 'isNew=' + isNew.toString() + '&comp_uid=' + comp_uid + '&category=' + category + '&asset_category_name=' + asset_category_name + '&asset_tag=' + asset_tag + '&warranty=' + warranty + '&manufacturer=' + manufacturer + '&model=' + model + '&modelno=' + modelno + '&serial=' + serial + '&remarks=' + remarks ,
+                    data: 'isNew=' + isNew.toString() + '&comp_uid=' + comp_uid + '&category=' + category + '&asset_category_name=' + asset_category_name + '&asset_tag=' + asset_tag + '&warranty=' + warranty + '&manufacturer=' + manufacturer + '&model=' + model + '&modelno=' + modelno + '&serial=' + serial + '&remarks=' + remarks + '&user=' + user ,
                     datatype: "html",
                     success: function (result)
                     {
@@ -87,10 +89,10 @@ $("#savecomponent_btn").click(function () {
                         {
                             if (isNew == true)
                             {
-                                toastr_success('Added Successfully.', '');
+                                toastr_success('Added Successfully.', '../component/');
                             } else
                             {
-                                toastr_success('Updated Successfully.', '');
+                                toastr_success('Updated Successfully.', '../component/');
                             }
                         } else
                         {

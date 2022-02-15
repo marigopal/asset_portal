@@ -12,6 +12,7 @@ $model = $_POST['model'];
 $modelno = $_POST['modelno'];
 $serial = $_POST['serial'];
 $remarks = $_POST['remarks'];
+$user = $_POST['user'];
 $uid = uniqid();
 $uid = "COMP_" . $uid;
 if ($isNew === 'true') {
@@ -29,12 +30,12 @@ if ($isNew === 'true') {
     
     $sql = "INSERT INTO `tbl_component`(`component_uid`, `asset_tag`, `assettag_number`, "
             . "`warranty`, `category`, `manufacturer`, `model`, `model_no`, `serialno`, "
-            . "`remarks`) VALUES ('$uid','$asset_tag','$new_assettag_number','$warranty','$category','$manufacturer',"
-            . "'$model','$modelno','$serial','$remarks')";
+            . "`remarks`,`assigned_user`) VALUES ('$uid','$asset_tag','$new_assettag_number','$warranty','$category','$manufacturer',"
+            . "'$model','$modelno','$serial','$remarks','$user')";
 } else if ($isNew === 'false') {
     $sql = "UPDATE `tbl_component` SET `warranty`='$warranty',`category`='$category',"
             . "`manufacturer`='$manufacturer',`model`='$model',`model_no`='$modelno',`serialno`='$serial',"
-            . "`remarks`='$remarks' WHERE `component_uid` = '$comp_uid'";
+            . "`remarks`='$remarks', `assigned_user` = '$user' WHERE `component_uid` = '$comp_uid'";
 }
 //echo $sql;exit();
 if ($result = $con->query($sql)) {

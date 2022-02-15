@@ -1,6 +1,8 @@
 <aside class="control-sidebar control-sidebar-dark"></aside>
 </div>
+
 <script src="../include/global.js" type="text/javascript"></script>
+
 <script src="../template_files/plugins/jquery/jquery.min.js"></script>
 <script src="../template_files/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../template_files/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -33,6 +35,7 @@
 <script src="../template_files/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
 <script src="../template_files/plugins/bs-stepper/js/bs-stepper.min.js"></script>
 <script src="../template_files/plugins/dropzone/min/dropzone.min.js"></script>
+
 
 
 <script>
@@ -169,6 +172,7 @@
   }
   // DropzoneJS Demo Code End
 </script>
+<script src="../include/menu_close.js" type="text/javascript"></script>
 
 </body>
 </html>

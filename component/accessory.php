@@ -41,6 +41,7 @@ include('../include/model.php');
                                         <th>Model No</th>
                                         <th>Serial</th>
                                         <th>warranty</th>
+                                        <th>Assigned User</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>

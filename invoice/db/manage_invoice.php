@@ -16,7 +16,7 @@ if ($isNew === 'true') {
     $sql = "";
 } else if ($isNew === 'false') {
     $sql = "UPDATE `tbl_invoice` SET `invoice_date`='$invdate',`invoice_no`='$invno',`supplier`='$supplier',"
-            . "`purchase_date`='$pod',`purchase_no`='$pon',`purchase_cost`='$poc' WHERE `invoice_uid` = '$invoice_uid'";
+            . "`purchase_date`='$pod',`purchase_no`='$pon',`purchase_cost`='$poc',`inv_filename` = '$img_name' WHERE `invoice_uid` = '$invoice_uid'";
 }
 //echo $sql;exit();
 if ($result = $con->query($sql)) {

@@ -13,7 +13,8 @@ while ($row = mysqli_fetch_array($result)) {
     $purchase_date = $row['purchase_date'];
     $purchase_no = $row['purchase_no'];
     $purchase_cost = $row['purchase_cost'];
-    $data_arr[] = array("invoice_uid " => $invoice_uid, "invoice_date" => $invoice_date, "invoice_no" => $invoice_no, "supplier" => $supplier, "purchase_date" => $purchase_date, "purchase_no" => $purchase_no, "purchase_cost" => $purchase_cost);
+    $inv_filename = $row['inv_filename'];
+    $data_arr[] = array("invoice_uid " => $invoice_uid, "invoice_date" => $invoice_date, "invoice_no" => $invoice_no, "supplier" => $supplier, "purchase_date" => $purchase_date, "purchase_no" => $purchase_no, "purchase_cost" => $purchase_cost, "inv_filename" => $inv_filename);
 }
 echo json_encode($data_arr);
 ?>

@@ -26,6 +26,7 @@ function load_data(_id) {
                     var supplier_ = result[i]['supplier'];
                     var invoice_date = result[i]['invoice_date'];
                     var invoice_no = result[i]['invoice_no'];
+                    var inv_filename = result[i]['inv_filename'];
                     if (len > 0)
                     {
                         $("#invoice_uid").val(_id);
@@ -35,6 +36,7 @@ function load_data(_id) {
                         $("#supplier").val(supplier_);
                         $("#invdate").val(invoice_date);
                         $("#invno").val(invoice_no);
+                        $("#img_name").val(inv_filename);
                     }
                 }
             }
@@ -51,7 +53,7 @@ $("#saveinvoicebutton").click(function(){
     var invdate = $("#invdate").val();
     var invno = $("#invno").val();
     var img_name = $("#img_name").val();
-    add_disabled('savesupplierbutton');
+    add_disabled('saveinvoicebutton');
     if (invoice_uid == '')
     {
         isNew = true;

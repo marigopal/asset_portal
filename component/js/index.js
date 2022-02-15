@@ -11,13 +11,17 @@ $.ajax({
         generateDTable('component_list');
     }
 });
+function delete_row(id)
+{
+    $("#delete_uid").val(id);
+}
 $("#delete_button").click(function ()
 {
     var uid = $("#delete_uid").val();
     $.ajax
             ({
                 type: "POST",
-                url: "db/delete_supplier.php",
+                url: "db/delete_component.php",
                 data: 'uid=' + uid,
                 datatype: "html",
                 success: function (result)
@@ -53,7 +57,33 @@ $("#save_userbutton").click(function () {
                     {
 
                         modal_hide('asset_assign_user_modal');
-                        toastr_success('Asset Assigne to UserSuccessfully..!', '');
+                        toastr_success('Asset Assigned to UserSuccessfully..!', '');
+                    } else
+                    {
+                        toastr_error();
+                    }
+                }
+            });
+});
+function checkinconfirm(id)
+{
+    $("#compo_removeuid").val(id);
+}
+$("#confirmcheckinbutton").click(function(){
+    var compo_removeuid = $("#compo_removeuid").val();
+     $.ajax
+            ({
+                type: "POST",
+                url: "db/checkinasset.php",
+                data: '&compo_removeuid=' + compo_removeuid ,
+                datatype: "html",
+                success: function (result)
+                {
+                    if (result.trim() == 1)
+                    {
+
+                        modal_hide('checkinconfirm');
+                        toastr_success('Checkin Successfully..!', '');
                     } else
                     {
                         toastr_error();

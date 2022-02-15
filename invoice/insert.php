@@ -213,6 +213,22 @@ include('../include/model.php');
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="row">
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Upload Invoice</label>
+                                                                <input type="file" id="image_upload" name="file" />
+                                                                <input type="hidden" value="Upload" id="button_upload_image">
+                                                                <input type="hidden" id="img_name" name="img_name"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form-group">
+
+                                                                <embed src="file_name.pdf" width="350px" height="500px" id="receipt_display"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <button type="button" class="btn btn-primary" onclick="stepper.next()">Next</button>
                                                 </div>
                                                 <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
@@ -250,3 +266,4 @@ include('../include/model.php');
 <?php include('../include/footer.php'); ?>
 <?php include('../include/script.php'); ?>
 <script src="js/insert.js" type="text/javascript"></script>
+<script src="../include/imageupload.js" type="text/javascript"></script>

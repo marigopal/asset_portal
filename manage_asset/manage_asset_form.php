@@ -107,6 +107,15 @@ include('../include/menu/menu.php');
                             </div>
                         </div>
                     </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label>User
+                                    </label>
+                                <select class="form-control select2bs4" id="user" name="user"></select>                            
+                            </div>
+                        </div>
+                    </div>
 
 
 
@@ -130,7 +139,7 @@ include('../include/menu/menu.php');
                     <div class="row d-flex justify-content-center">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_button">Close</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel_button" onclick="location.href = '../component/';">Close</button>
                                 <button type="button" class="btn btn-primary" id="savecomponent_btn" name="savecomponent_btn">Save</button>
                             </div>
                         </div>

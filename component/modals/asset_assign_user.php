@@ -32,3 +32,24 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="checkinconfirm">
+    <div class="modal-dialog">
+        <div class="modal-content bg-danger">
+            <div class="modal-body">
+                <p>Are you sure you want to checkin ?</p>
+                <div class="row" hidden="">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>Unique ID<span class="required text-red">*</span></label>
+                            <input type="text" class="form-control" id="compo_removeuid" name="compo_removeuid" placeholder="Unique ID" onkeyup="input_remove_error_notification('compo_removeuid');">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-outline-light" id="confirmcheckinbutton" name="confirmcheckinbutton">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

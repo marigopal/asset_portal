@@ -19,13 +19,14 @@ $invno = $_POST['invno'];
 $manufacturer = $_POST['manufacturer'];
 $asset_model = $_POST['asset_model'];
 $model_no = $_POST['model_no'];
+$img_name = $_POST['img_name'];
 
 if ($inv_uid == '') {
     $uid = uniqid();
     $inv_uid = "INV_" . $uid;
     $inv_query = "INSERT INTO `tbl_invoice` (`invoice_uid`, `invoice_date`, `invoice_no`, `supplier`, "
-            . "`purchase_date`, `purchase_no`, `purchase_cost`) VALUES ('$inv_uid','$invdate','$invno','$supplier',"
-            . "'$pod','$pon','$poc')";
+            . "`purchase_date`, `purchase_no`, `purchase_cost`, `inv_filename`) VALUES ('$inv_uid','$invdate','$invno','$supplier',"
+            . "'$pod','$pon','$poc','$img_name')";
     $statement = $connect->prepare($inv_query);
 
     $statement->execute();

@@ -94,20 +94,14 @@ include('../include/menu/menu.php');
                     <div class="row d-flex justify-content-center">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label>Upload Image</label>
+                                <label>Upload Invoice</label>
                                 <input type="file" id="image_upload" name="file" />
                                 <input type="hidden" value="Upload" id="button_upload_image">
                                 <input type="hidden" id="img_name"/>
                             </div>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <img src="" alt="" width="200" height="200" id="receipt_display" class="d-none"> 
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="row d-flex justify-content-center">
                         <div class="col-12 col-md-6">
                             <div class="form-group">

@@ -1,7 +1,7 @@
 <?php
 include '../../include/lib_page.php';
 $sno = 0;
-$sql = "SELECT a.invoice_uid,a.invoice_date,a.invoice_no,a.supplier,a.purchase_date,a.purchase_no,a.purchase_cost,a.is_deleted,b.supplier_uid,b.supplier_name FROM `tbl_invoice` a INNER JOIN tbl_supplier b on b.supplier_uid = a.supplier WHERE a.is_deleted = '0' ORDER BY a.invoice_date DESC;";
+$sql = "SELECT a.invoice_uid,a.invoice_date,a.invoice_no,a.supplier,a.purchase_date,a.purchase_no,a.purchase_cost,a.`inv_filename`,a.is_deleted,b.supplier_uid,b.supplier_name FROM `tbl_invoice` a LEFT JOIN tbl_supplier b on b.supplier_uid = a.supplier WHERE a.is_deleted = '0' ORDER BY a.invoice_date DESC";
 // echo $sql;exit();
 $result = $con->query($sql);
 if ($result->num_rows > 0) {
@@ -18,7 +18,11 @@ if ($result->num_rows > 0) {
             <td><?php echo $row['purchase_date']; ?></td>
             <td><?php echo $row['purchase_no']; ?></td>
             <td><?php echo $row['purchase_cost']; ?></td>
-            <td><?php echo $row['purchase_cost']; ?></td>
+            <td>
+               <?php  if($row['inv_filename'] != ''){?>
+            <a href="../image_location/<?php echo $row['inv_filename']; ?>" target="blank"><i class="fas fa-download"></i></a>
+               <?php }?>
+            </td>
             <td>
                 <?php
                 $invoice_uid_encrypt = encrypt($row['invoice_uid']);
@@ -41,7 +45,7 @@ if ($result->num_rows > 0) {
                             <th>Model No</th>
                             <th>Warranty</th>
                             <th>Serial</th>
-                            <th>Action</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -63,7 +67,7 @@ if ($result->num_rows > 0) {
                                     <td style="width:auto;"><p><?php echo $subrow['model_number']; ?></p></td>
                                     <td style="width:auto;"><p><?php echo $subrow['warranty']; ?></p></td>
                                     <td style="width:auto;"><p><?php echo $subrow['serialno']; ?></p></td>
-                                    <td style="width:auto;"><p><a href="#" data-toggle="modal" data-target="#leads_task_modal" onclick="update_task('<?php echo $subrow['component_uid'] ?>');"><i class="fas fa-edit"></i></a></p></td>
+                                    
                                 </tr>   
                                 <?php
                             }
