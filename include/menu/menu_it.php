@@ -89,12 +89,12 @@ include('../include/stylesheet.php');
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
+<!--                                <li class="nav-item">
                                     <a href="../component/asset" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Asset</p>
                                     </a>
-                                </li>
+                                </li>-->
 <!--                                <li class="nav-item">
                                     <a href="../asset_accessories/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -116,7 +116,7 @@ include('../include/stylesheet.php');
                                 <li class="nav-item">
                                     <a href="../component/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>All Reports</p>
+                                        <p>All</p>
                                     </a>
                                 </li>
                             </ul>

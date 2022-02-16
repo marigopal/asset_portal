@@ -37,7 +37,7 @@ if ($isNew === 'true') {
             . "`manufacturer`='$manufacturer',`model`='$model',`model_no`='$modelno',`serialno`='$serial',"
             . "`remarks`='$remarks', `assigned_user` = '$user' WHERE `component_uid` = '$comp_uid'";
 }
-//echo $sql;exit();
+// echo $sql;exit();
 if ($result = $con->query($sql)) {
     echo "1";
 } else {
