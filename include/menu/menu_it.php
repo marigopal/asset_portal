@@ -101,7 +101,7 @@ include('../include/stylesheet.php');
                                         <p>License</p>
                                     </a>
                                 </li>-->
-                                <li class="nav-item">
+                               <!--  <li class="nav-item">
                                     <a href="../component/accessory" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Accessory</p>
@@ -112,7 +112,7 @@ include('../include/stylesheet.php');
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Component</p>
                                     </a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
                                     <a href="../component/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
