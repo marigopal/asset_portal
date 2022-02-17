@@ -96,7 +96,7 @@ include('../include/menu/menu.php');
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 
-                                <embed src="file_name.pdf" width="350px" height="500px" id="receipt_display"/>
+                                <embed src="" width="350px" height="500px" id="receipt_display"/>
                             </div>
                         </div>
                     </div>
