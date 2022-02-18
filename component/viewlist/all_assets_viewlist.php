@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
                 $component_uid_encrypt = encrypt($row['component_uid']);
                 ?>
                 <a href="../manage_asset/manage_asset_form?id=<?php echo $component_uid_encrypt; ?>&redirect_url=component" ><i class="fas fa-edit"></i></a>
-                <!--<a href="../manage_asset/manage_asset_form?id=<?php echo $component_uid_encrypt; ?>" ><i class="fas fa-file-invoice" title="Invoice Update"></i></a>-->
+                <a href="#" data-toggle="modal" data-target="#inv_update_modal" onclick="invoice_update('<?php echo $component_uid_encrypt; ?>');"><i class="fas fa-file-invoice" title="Invoice Update"></i></a>
                 <?php if($row['assigned_user'] == 0){?>
                 <a href="#" data-toggle="modal" data-target="#asset_assign_user_modal" onclick="assetassign('<?php echo $component_uid_encrypt; ?>');"><i class="fas fa-user" title="Checkout"></i></a>
            <?php } else if($row['assigned_user'] != ''){?>

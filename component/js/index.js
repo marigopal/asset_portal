@@ -11,6 +11,9 @@ $.ajax({
         generateDTable('component_list');
     }
 });
+$(document).ready(function () {
+    load_suppliers('invupd_supplier');
+});
 function delete_row(id)
 {
     $("#delete_uid").val(id);
@@ -84,6 +87,63 @@ $("#confirmcheckinbutton").click(function(){
 
                         modal_hide('checkinconfirm');
                         toastr_success('Checkin Successfully..!', '');
+                    } else
+                    {
+                        toastr_error();
+                    }
+                }
+            });
+});
+
+function load_invoicelist(ddlName, selectedvalue)
+{
+    var invupd_supplier= $("#invupd_supplier").val();
+    $.ajax({
+        type: "POST",
+        url: "db/load_invoice.php",
+        data: {supplier_select: invupd_supplier},
+        success: function (_result)
+        {
+            var result = JSON.parse(_result.replace('\n', ''));
+            $('#' + ddlName).empty();
+            var select_li_txt = "<option value='0'>Select</option>";
+            $('#' + ddlName).append(select_li_txt);
+            if (result != '')
+            {
+                $.each(result, function (i) {
+                    var li_txt = "<option value='" + result[i].invoice_uid + "'>" + result[i].invoice_no + "</option>";
+                    $('#' + ddlName).append(li_txt);
+                });
+                if (selectedvalue != null) {
+                    $('#' + ddlName).val(selectedvalue);
+                }
+            } 
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+function invoice_update(id)
+{
+    $("#invupd_comid").val(id);
+}
+$("#saveinvupd_button").click(function(){
+    var invupd_comid = $("#invupd_comid").val();
+    var invupd_invno = $("#invupd_invno").val();
+    $.ajax
+            ({
+                type: "POST",
+                url: "db/invnum_update.php",
+                data: '&invupd_comid=' + invupd_comid + '&invupd_invno=' + invupd_invno,
+                datatype: "html",
+                success: function (result)
+                {
+                    if (result.trim() == 1)
+                    {
+
+                        modal_hide('inv_update_modal');
+                        toastr_success('Invoice Updated Successfully..!', '');
                     } else
                     {
                         toastr_error();

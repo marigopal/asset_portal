@@ -11,6 +11,8 @@ if ($result->num_rows > 0) {
             <td hidden=""><?php echo $row['users_uid']; ?></td>
             <td><?php echo $row['emp_id']; ?></td>
             <td><?php echo $row['firstname']; ?></td>
+            <td><?php echo $row['lastname']; ?></td>
+            <td><?php echo $row['username']; ?></td>
             <td>
                 <a href="#" data-toggle="modal" data-target="#users_modal_box" onclick="update_user('<?= $row['users_uid']; ?>');"><i class="fas fa-edit"></i></a>
                 <a href="#" data-toggle="modal" data-target="#deleteuser_modal_box" onclick="delete_user('<?= $row['users_uid']; ?>');"><i class="fas fa-trash-alt"></i></a>

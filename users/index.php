@@ -35,7 +35,9 @@ include ("modal/modals.php");
                                         <th>#</th>
                                         <th hidden="">ID</th>
                                         <th>ID</th>
-                                        <th>Name</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

@@ -53,3 +53,49 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="inv_update_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <div class="form-group">
+                                <label>Unique ID<span class="required text-red">*</span></label>
+                                <input type="text" class="form-control" id="invupd_comid" name="invupd_comid">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 ">
+                           
+                            <div class="form-group">
+                                <label>Supplier <span class="required text-red">*</span></label>
+                                <select class="form-control" id="invupd_supplier" name="invupd_supplier" onchange="load_invoicelist('invupd_invno')">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 ">
+                           
+                            <div class="form-group">
+                                <label>Invoice Number <span class="required text-red">*</span></label>
+                                <select class="form-control" id="invupd_invno" name="invupd_invno">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveinvupd_button" name="saveinvupd_button">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

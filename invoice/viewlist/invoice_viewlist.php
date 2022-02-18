@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
                         <?php
                         $sno1 = 0;
                         $inv_id = $row['invoice_uid'];
-                        $sub_sql = "SELECT a.component_uid,a.asset_tag,a.assettag_number,a.warranty,a.inv_uid,a.category,a.manufacturer,a.model,a.model_no,a.serialno,a.remarks,a.is_deleted,b.category_uid,b.category_name,c.manufacturers_uid,c.manufacturers_name,d.models_uid,d.models_name,e.modelno_uid,e.model_number FROM `tbl_component` a INNER JOIN tbl_category b on b.category_uid = a.category INNER JOIN tbl_manufacturers c ON c.manufacturers_uid = a.manufacturer INNER JOIN tbl_models d on d.models_uid = a.model INNER JOIN tbl_modelno e on e.modelno_uid = a.model_no WHERE a.is_deleted = '0' and a.inv_uid = '$inv_id' ORDER BY a.category ASC";
+                        $sub_sql = "SELECT a.component_uid,a.asset_tag,a.assettag_number,a.warranty,a.inv_uid,a.category,a.manufacturer,a.model,a.model_no,a.serialno,a.remarks,a.is_deleted,b.category_uid,b.category_name,c.manufacturers_uid,c.manufacturers_name,d.models_uid,d.models_name,e.modelno_uid,e.model_number FROM `tbl_component` a Left JOIN tbl_category b on b.category_uid = a.category left JOIN tbl_manufacturers c ON c.manufacturers_uid = a.manufacturer left JOIN tbl_models d on d.models_uid = a.model left JOIN tbl_modelno e on e.modelno_uid = a.model_no WHERE a.is_deleted = '0' and a.inv_uid = '$inv_id' ORDER BY a.category ASC";
                         $subresult = $con->query($sub_sql);
                         if ($subresult->num_rows > 0) {
                             while ($subrow = $subresult->fetch_array(MYSQLI_BOTH)) {
