@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
                 $invoice_uid_encrypt = encrypt($row['invoice_uid']);
                 ?>
                 <a href="../invoice/update?id=<?php echo $invoice_uid_encrypt; ?>" ><i class="fas fa-edit"></i></a>
-                <a href="#" data-toggle="modal" data-target="#leads_task_modal" onclick="add_task('<?php echo $row['invoice_uid'] ?>');"><i class="fas fa-tasks"></i></a>
+                <!--<a href="#" data-toggle="modal" data-target="#leads_task_modal" onclick="add_task('<?php echo $row['invoice_uid'] ?>');"><i class="fas fa-tasks"></i></a>-->
             </td>
         </tr>
         <tr class="expandable-body d-none">
