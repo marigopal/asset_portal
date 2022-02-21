@@ -18,7 +18,6 @@ $invdate = date("Y-m-d", strtotime($invdate));
 $invno = $_POST['invno'];
 $manufacturer = $_POST['manufacturer'];
 $asset_model = $_POST['asset_model'];
-$model_no = $_POST['model_no'];
 $img_name = $_POST['img_name'];
 
 if ($inv_uid == '') {
@@ -51,9 +50,9 @@ if (isset($_POST["serial"])) {
         $serial = $_POST["serial"][$count];
         $remarks = $_POST["remarks"][$count];
         $query = "INSERT INTO `tbl_component`(`component_uid`, `inv_uid`, `asset_tag`, `assettag_number`, `warranty`, `category`, `manufacturer`, `model`, "
-                . "`model_no`, `serialno`, `remarks`) VALUES ('$component_uid','$inv_uid',"
+                . "`serialno`, `remarks`) VALUES ('$component_uid','$inv_uid',"
                 . "'$asset_tag','$new_assettag_number','$warranty','$asset_category','$manufacturer',"
-                . "'$asset_model','$model_no','$serial', '$remarks')";
+                . "'$asset_model','$serial', '$remarks')";
 
         $statement = $connect->prepare($query);
         $statement->execute();

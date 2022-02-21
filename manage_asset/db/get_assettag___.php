@@ -17,7 +17,6 @@ $invdate = date("Y-m-d", strtotime($invdate));
 $invno = $_POST['invno'];
 $manufacturer = $_POST['manufacturer'];
 $asset_model = $_POST['asset_model'];
-$model_no = $_POST['model_no'];
 $uid = uniqid();
 $uid = "INV_" . $uid;
 $inv_query = "INSERT INTO `tbl_invoice` (`invoice_uid`, `invoice_date`, `invoice_no`, `supplier`, "

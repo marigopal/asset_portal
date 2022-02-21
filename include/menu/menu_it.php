@@ -43,15 +43,22 @@ include('../include/stylesheet.php');
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="javascript:void(0)" onclick="systemlogout(this)">
-                        <i class="fas fa-user"></i>
+                <li class="nav-item dropdown user-menu">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        <span class="d-none d-md-inline">Alexander Pierce</span>
                     </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="javascript:void(0)" onclick="systemlogout(this)">
-                        <i class="fas fa-power-off"></i>
-                    </a>
+                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <li class="user-header bg-primary">
+                            <p>
+                                Alexander Pierce - Web Developer
+                                <small>Member since Nov. 2012</small>
+                            </p>
+                        </li>
+                        <li class="user-footer">
+                            <a href="#" class="btn btn-default btn-flat"><i class="fas fa-user-secret"></i></a>
+                            <a href="javascript:void(0)" onclick="systemlogout(this)" class="btn btn-default btn-flat float-right"><i class="fas fa-power-off"></i></a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -75,10 +82,7 @@ include('../include/stylesheet.php');
                         <li class="nav-item">
                             <a href="../home/" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Dashboard
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
+                                <p>Dashboard</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -89,30 +93,6 @@ include('../include/stylesheet.php');
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-<!--                                <li class="nav-item">
-                                    <a href="../component/asset" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Asset</p>
-                                    </a>
-                                </li>-->
-<!--                                <li class="nav-item">
-                                    <a href="../asset_accessories/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>License</p>
-                                    </a>
-                                </li>-->
-                               <!--  <li class="nav-item">
-                                    <a href="../component/accessory" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Accessory</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../component/component" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Component</p>
-                                    </a>
-                                </li> -->
                                 <li class="nav-item">
                                     <a href="../component/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -152,26 +132,11 @@ include('../include/stylesheet.php');
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="../models/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Models
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
+                                        <p>Model</p>
                                     </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="../models/" class="nav-link">
-                                                <i class="fas fas-laptop nav-icon"></i>
-                                                <p>Models</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="../model_no/" class="nav-link">
-                                                <i class="fas fas-laptop nav-icon"></i>
-                                                <p>Model Number</p>
-                                            </a>
-                                        </li>
-                                    </ul>
+
                                 </li>
                                 <li class="nav-item">
                                     <a href="../category/" class="nav-link">
@@ -211,7 +176,7 @@ include('../include/stylesheet.php');
             </div>
         </aside>
         <script>
-$(document).ready(function() {
-   $("#menu_button").trigger('click');
-});
-</script>
+            $(document).ready(function () {
+                $("#menu_button").trigger('click');
+            });
+        </script>

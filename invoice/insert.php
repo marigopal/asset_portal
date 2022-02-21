@@ -113,7 +113,7 @@ include('../include/model.php');
                                                             <div class="form-group">
                                                                 <label>Asset Category
                                                                 </label>
-                                                                <select class="form-control select2bs4" id="asset_category" name="asset_category">
+                                                                <select class="form-control select2bs4" id="asset_category" name="asset_category" required="">
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -133,7 +133,7 @@ include('../include/model.php');
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Location</label>
-                                                                <select class="form-control select2bs4" id="location" name="location">
+                                                                <select class="form-control select2bs4" id="location" name="location" required="">
 
                                                                 </select>
                                                             </div>
@@ -168,7 +168,7 @@ include('../include/model.php');
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Supplier</label>
-                                                                <select class="form-control select2bs4" id="supplier" name="supplier">
+                                                                <select class="form-control select2bs4" id="supplier" name="supplier" required="">
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -176,7 +176,7 @@ include('../include/model.php');
                                                             <div class="form-group">
                                                                 <label>Invoice  Date</label>
                                                                 <div class="input-group date" id="invdate" data-target-input="nearest">
-                                                                    <input type="text" class="form-control datetimepicker-input" data-target="#invdate" id="invdate" name="invdate" />
+                                                                    <input type="text" class="form-control datetimepicker-input" data-target="#invdate" id="invdate" name="invdate" required=""/>
                                                                     <div class="input-group-append" data-target="#invdate" data-toggle="datetimepicker">
                                                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                                     </div>
@@ -186,7 +186,7 @@ include('../include/model.php');
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Invoice Number</label>
-                                                                <input type="text" class="form-control" id="invno" name="invno">
+                                                                <input type="text" class="form-control" id="invno" name="invno" required="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -202,13 +202,6 @@ include('../include/model.php');
                                                             <div class="form-group">
                                                                 <label>Model</label>
                                                                 <select class="form-control select2bs4" id="asset_model" name="asset_model">
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12 col-sm-4">
-                                                            <div class="form-group">
-                                                                <label>Model No</label>
-                                                                <select class="form-control select2bs4" id="model_no" name="model_no">
                                                                 </select>
                                                             </div>
                                                         </div>

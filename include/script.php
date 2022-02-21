@@ -36,6 +36,13 @@
 <script src="../template_files/plugins/bs-stepper/js/bs-stepper.min.js"></script>
 <script src="../template_files/plugins/dropzone/min/dropzone.min.js"></script>
 
+<script>
+function systemlogout(){
+                Cookies.remove('remember_me');
+                Cookies.remove('user_id');
+                window.location.href="/login";
+}       
+</script>
 
 
 <script>

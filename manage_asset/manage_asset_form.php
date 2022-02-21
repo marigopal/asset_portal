@@ -83,16 +83,6 @@ include('../include/menu/menu.php');
                     <div class="row d-flex justify-content-center">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label>Model No
-                                    <span class="required text-red"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" data-toggle="modal" data-target="#new_users" title="New"></span>
-                                </label>
-                                <select class="form-control" id="modelno" name="modelno"></select>                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
                                 <label>Serial</label>
 
                                 <input type="text" class="form-control " id="serial" name="serial" onclick = "input_remove_error_notification('serial')">

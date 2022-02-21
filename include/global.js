@@ -11,7 +11,7 @@ function load_countries(ddlName, selectedvalue) {
         {
             var result = JSON.parse(_result.replace('\n', ''));
             $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
+            var select_li_txt = "<option value=''>Select</option>";
             $('#' + ddlName).append(select_li_txt);
             if (result != '')
             {
@@ -38,7 +38,7 @@ function load_users(ddlName, selectedvalue) {
         {
             var result = JSON.parse(_result.replace('\n', ''));
             $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
+            var select_li_txt = "<option value=''>Select</option>";
             $('#' + ddlName).append(select_li_txt);
             if (result != '')
             {
@@ -65,7 +65,7 @@ function load_locations(ddlName, selectedvalue) {
         {
             var result = JSON.parse(_result.replace('\n', ''));
             $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
+            var select_li_txt = "<option value=''>Select</option>";
             $('#' + ddlName).append(select_li_txt);
             if (result != '')
             {
@@ -93,7 +93,7 @@ function load_suppliers(ddlName, selectedvalue) {
         {
             var result = JSON.parse(_result.replace('\n', ''));
             $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
+            var select_li_txt = "<option value=''>Select</option>";
             $('#' + ddlName).append(select_li_txt);
             if (result != '')
             {
@@ -121,7 +121,7 @@ function load_assetcategory(ddlName, selectedvalue) {
         {
             var result = JSON.parse(_result.replace('\n', ''));
             $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
+            var select_li_txt = "<option value=''>Select</option>";
             $('#' + ddlName).append(select_li_txt);
             if (result != '')
             {
@@ -149,7 +149,7 @@ function load_manufacturer(ddlName, selectedvalue) {
         {
             var result = JSON.parse(_result.replace('\n', ''));
             $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
+            var select_li_txt = "<option value=''>Select</option>";
             $('#' + ddlName).append(select_li_txt);
             if (result != '')
             {
@@ -177,7 +177,7 @@ function load_model(ddlName, selectedvalue) {
         {
             var result = JSON.parse(_result.replace('\n', ''));
             $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
+            var select_li_txt = "<option value=''>Select</option>";
             $('#' + ddlName).append(select_li_txt);
             if (result != '')
             {
@@ -205,7 +205,7 @@ function load_modelno(ddlName, selectedvalue) {
         {
             var result = JSON.parse(_result.replace('\n', ''));
             $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
+            var select_li_txt = "<option value=''>Select</option>";
             $('#' + ddlName).append(select_li_txt);
             if (result != '')
             {
@@ -234,7 +234,7 @@ function loadtype(ddlName, selectedvalue) {
         {
             var result = JSON.parse(_result.replace('\n', ''));
             $('#' + ddlName).empty();
-            var select_li_txt = "<option value='0'>Select</option>";
+            var select_li_txt = "<option value=''>Select</option>";
             $('#' + ddlName).append(select_li_txt);
             if (result != '')
             {
@@ -357,4 +357,8 @@ function removehidden_class(id)
 function addhidden_class(id)
 {
     $("#" + id).addClass('d-none');
+}
+function generateUID()
+{
+    return window.btoa(Array.from(window.crypto.getRandomValues(new Uint8Array(8 * 2))).map((b) => String.fromCharCode(b)).join("")).replace(/[+/]/g, "").substring(0, 8);
 }

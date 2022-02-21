@@ -4,7 +4,7 @@
     </head>
     <body>
         <script type="text/javascript">
-            window.location.href = "home/"
+            window.location.href = "/login"
         </script>
     </body>
 </html>
