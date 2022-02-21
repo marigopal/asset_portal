@@ -1,6 +1,8 @@
 <?php
 include '../include/header.php';
 include('../include/stylesheet.php');
+include('../include/user_info.php');
+include('../include/function_php_encryption.php');
 ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -45,13 +47,16 @@ include('../include/stylesheet.php');
                 </li>
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <span class="d-none d-md-inline">Alexander Pierce</span>
+                        <span class="d-none d-md-inline"><?php
+                            $currentuserid = decrypt($_COOKIE['user_id']);
+                            echo ${strtoupper($currentuserid) . 'firstname'};
+                            ?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <li class="user-header bg-primary">
                             <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                
+<!--                                <small>Member since Nov. 2012</small>-->
                             </p>
                         </li>
                         <li class="user-footer">
