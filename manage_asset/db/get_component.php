@@ -15,9 +15,10 @@ while ($row = mysqli_fetch_array($result)) {
     $model_no = $row['model_no'];
     $serialno = $row['serialno'];
     $remarks = $row['remarks'];
+    $assigned_user = $row['assigned_user'];
     
     
-    $data_arr[] = array("component_uid " => $component_uid, "asset_tag" => $asset_tag, "warranty" => $warranty, "category" => $category, "manufacturer" => $manufacturer, "model" => $model, "model_no" => $model_no, "serialno" => $serialno, "remarks" => $remarks);
+    $data_arr[] = array("component_uid " => $component_uid, "asset_tag" => $asset_tag, "warranty" => $warranty, "category" => $category, "manufacturer" => $manufacturer, "model" => $model, "model_no" => $model_no, "serialno" => $serialno, "remarks" => $remarks, "assigned_user" => $assigned_user);
 }
 echo json_encode($data_arr);
 ?>

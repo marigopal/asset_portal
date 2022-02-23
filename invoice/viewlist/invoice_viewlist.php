@@ -42,7 +42,6 @@ if ($result->num_rows > 0) {
                             <th>Category</th>
                             <th>Manufacturer</th>
                             <th>Model</th>
-                            <th>Model No</th>
                             <th>Warranty</th>
                             <th>Serial</th>
                            
@@ -64,7 +63,6 @@ if ($result->num_rows > 0) {
                                     <td style="width:auto;"><p><?php echo $subrow['category_name']; ?></p></td>
                                     <td style="width:auto;" ><p><?php echo $subrow['manufacturers_name']; ?></p></td>
                                     <td style="width:auto;"><p><?php echo $subrow['models_name']; ?></p></td>
-                                    <td style="width:auto;"><p><?php echo $subrow['model_number']; ?></p></td>
                                     <td style="width:auto;"><p><?php echo $subrow['warranty']; ?></p></td>
                                     <td style="width:auto;"><p><?php echo $subrow['serialno']; ?></p></td>
                                     

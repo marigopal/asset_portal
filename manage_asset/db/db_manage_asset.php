@@ -12,6 +12,10 @@ $model = $_POST['model'];
 $serial = $_POST['serial'];
 $remarks = $_POST['remarks'];
 $user = $_POST['user'];
+if($user == '')
+{
+    $user = '0';
+}
 $uid = uniqid();
 $uid = "COMP_" . $uid;
 if ($isNew === 'true') {

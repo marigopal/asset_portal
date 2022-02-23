@@ -43,7 +43,7 @@ function load_users(ddlName, selectedvalue) {
             if (result != '')
             {
                 $.each(result, function (i) {
-                    var li_txt = "<option value='" + result[i].users_uid + "'>" + result[i].emp_id + " - "+ result[i].firstname + " ( " +  result[i].username + ")"+"</option>";
+                    var li_txt = "<option value='" + result[i].users_uid + "'>" + result[i].firstname + " ( " +  result[i].username + "-" + result[i].emp_id + ")"+"</option>";
                     $('#' + ddlName).append(li_txt);
                 });
                 if (selectedvalue != null) {
@@ -278,6 +278,10 @@ function input_remove_error_notification(input)
 function remove_disabled(id)
 {
     $("#" + id).removeAttr('disabled');
+}
+function remove_required(id)
+{
+    $("#" + id).removeAttr('required');
 }
 function add_disabled(id)
 {

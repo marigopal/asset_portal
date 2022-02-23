@@ -1,7 +1,7 @@
 <?php
 include('../../include/lib_page.php');
 
-$query2 = "SELECT * FROM `tbl_users` WHERE `is_deleted` = '0'";
+$query2 = "SELECT * FROM `tbl_users` WHERE `is_deleted` = '0' ORDER BY `firstname` ASC";
 
 $result = mysqli_query($con,$query2);
 $data_arr = array();

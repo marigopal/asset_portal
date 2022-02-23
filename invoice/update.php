@@ -95,7 +95,7 @@ include('../include/menu/menu.php');
                     <div class="row d-flex justify-content-center">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                
+
                                 <embed src="" width="350px" height="500px" id="receipt_display"/>
                             </div>
                         </div>

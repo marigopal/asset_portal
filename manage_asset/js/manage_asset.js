@@ -39,6 +39,8 @@ function load_data(_id) {
                     var model_ = result[i]['model'];
                     var serialno = result[i]['serialno'];
                     var remarks = result[i]['remarks'];
+                    
+                    var assigned_user_ = result[i]['assigned_user'];
                     if (len > 0)
                     {
                         $("#comp_uid").val(_id);
@@ -49,6 +51,8 @@ function load_data(_id) {
                         $("#model").val(model_);
                         $("#serial").val(serialno);
                         $("#remarks").val(remarks);
+                        $("#user").val(assigned_user_);
+                        
                     }
                 }
             }

@@ -9,16 +9,13 @@
                                 <label>Unique ID<span class="required text-red">*</span></label>
                                 <input type="text" class="form-control" id="compo_uid" name="compo_uid">
                             </div>
-                            
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 ">
-                           
                             <div class="form-group">
                                 <label>User <span class="required text-red">*</span></label>
                                 <select class="form-control" id="user" name="user">
-
                                 </select>
                             </div>
                         </div>
@@ -58,38 +55,33 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="card-body">
-                    <div class="row">
+                    <div class="row d-none">
                         <div class="col-12 ">
                             <div class="form-group">
                                 <label>Unique ID<span class="required text-red">*</span></label>
                                 <input type="text" class="form-control" id="invupd_comid" name="invupd_comid">
                             </div>
-                            
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 ">
-                           
                             <div class="form-group">
                                 <label>Supplier <span class="required text-red">*</span></label>
                                 <select class="form-control" id="invupd_supplier" name="invupd_supplier" onchange="load_invoicelist('invupd_invno')">
-
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 ">
-                           
                             <div class="form-group">
                                 <label>Invoice Number <span class="required text-red">*</span></label>
                                 <select class="form-control" id="invupd_invno" name="invupd_invno">
-
                                 </select>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="modal-footer ">

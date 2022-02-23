@@ -24,9 +24,31 @@ include ("modals/asset_assign_user.php");
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    <div class="row">
+                    <div class="col-12 col-sm-2">
+                        <div class="form-group">
+                            <select class="form-control" id="asset_category_select" name="asset_category_select" required="">
+                                <option>Select Category</option>
+                            </select>
+                          
+                        </div>
+                    </div>
+                         <div class="col-12 col-sm-2">
+                        <div class="form-group">
+                            <select class="form-control" id="asset_category_select" name="asset_category_select" required="">
+                                <option>Select Status</option>
+                            </select>
+                          
+                        </div>
+                    </div>
+                        
+                    </div>
+                    
                     <div class="card">
                         <div class="card-header">
+
                             <a href="../manage_asset/manage_asset_form"><img src="../img/add_row.png" alt="Smiley face" height="25" width="25" data-toggle="modal" data-target="#new_users" title="New"></a>
+
                         </div>
                         <div class="card-body">
                             <table id="component_list" class="table table-bordered table-striped">

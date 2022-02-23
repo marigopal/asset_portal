@@ -106,6 +106,9 @@ $("#save_confirm_button").click(function(){
     $("#inv_uid").val(invoice_select);
     addhidden_class('pod_div');
     addhidden_class('invoice_div');
+    remove_required('supplier');
+    remove_required('invdate');
+    remove_required('invno');
     $('#confirm_model').modal('toggle');
      
 });

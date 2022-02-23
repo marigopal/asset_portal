@@ -37,6 +37,10 @@ function load_data(_id) {
                         $("#invdate").val(invoice_date);
                         $("#invno").val(invoice_no);
                         $("#img_name").val(inv_filename);
+                        if (inv_filename != '') {
+                        $("#receipt_display").attr("src", "../image_location/" + inv_filename);
+                        removehidden_class('receipt_display');
+                    }
                     }
                 }
             }

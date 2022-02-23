@@ -97,6 +97,14 @@ include('../include/function_php_encryption.php');
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+<!--                             <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../component/asset" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Asset</p>
+                                    </a>
+                                </li>
+                            </ul>-->
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="../component/" class="nav-link">

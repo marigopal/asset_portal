@@ -113,7 +113,7 @@ include('../include/model.php');
                                                             <div class="form-group">
                                                                 <label>Asset Category
                                                                 </label>
-                                                                <select class="form-control select2bs4" id="asset_category" name="asset_category" required="">
+                                                                <select class="form-control select2bs4" id="asset_category" name="asset_category">
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -133,7 +133,7 @@ include('../include/model.php');
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Location</label>
-                                                                <select class="form-control select2bs4" id="location" name="location" required="">
+                                                                <select class="form-control select2bs4" id="location" name="location">
 
                                                                 </select>
                                                             </div>
@@ -143,12 +143,8 @@ include('../include/model.php');
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Purchase Order Date</label>
-                                                                <div class="input-group date" id="pod" data-target-input="nearest">
-                                                                    <input type="text" class="form-control datetimepicker-input" data-target="#pod" id="pod" name="pod" />
-                                                                    <div class="input-group-append" data-target="#pod" data-toggle="datetimepicker">
-                                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                                    </div>
-                                                                </div>
+                                                                <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask id="pod" name="pod" >
+                                                               
                                                             </div>
                                                         </div>
                                                         <div class="col-12 col-sm-4">
@@ -175,12 +171,9 @@ include('../include/model.php');
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Invoice  Date</label>
-                                                                <div class="input-group date" id="invdate" data-target-input="nearest">
-                                                                    <input type="text" class="form-control datetimepicker-input" data-target="#invdate" id="invdate" name="invdate" required=""/>
-                                                                    <div class="input-group-append" data-target="#invdate" data-toggle="datetimepicker">
-                                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                                    </div>
-                                                                </div>
+                                                                
+                                                                <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask id="invdate" name="invdate" required="">
+                                                               
                                                             </div>
                                                         </div>
                                                         <div class="col-12 col-sm-4">
@@ -194,14 +187,14 @@ include('../include/model.php');
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Manufacturer</label>
-                                                                <select class="form-control select2bs4" id="manufacturer" name="manufacturer">
+                                                                <select class="form-control select2bs4" id="manufacturer" name="manufacturer" >
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-12 col-sm-4">
                                                             <div class="form-group">
                                                                 <label>Model</label>
-                                                                <select class="form-control select2bs4" id="asset_model" name="asset_model">
+                                                                <select class="form-control select2bs4" id="asset_model" name="asset_model" >
                                                                 </select>
                                                             </div>
                                                         </div>

@@ -9,7 +9,11 @@ $asset_category_name = strtoupper(substr($asset_category_name, 0, 3));
 $warranty = $_POST['warranty'];
 $location = $_POST['location'];
 $pod = $_POST['pod'];
-$pod = date("Y-m-d", strtotime($pod));
+if($pod == '')
+{
+    $pod = '0000-00-00';
+}else{
+$pod = date("Y-m-d", strtotime($pod));}
 $pon = $_POST['pon'];
 $poc = $_POST['poc'];
 $supplier = $_POST['supplier'];
