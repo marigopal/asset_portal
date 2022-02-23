@@ -24,7 +24,7 @@
 
       <form id="login_form">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Username" name="username" required="" value="">
+            <input type="text" class="form-control" placeholder="Username" name="txt_uname" required="" value="">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -32,14 +32,13 @@
           </div>
         </div>
         <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password" name="password" required="" value="">
+            <input type="password" class="form-control" placeholder="Password" name="txt_pwd" required="" value="">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
-         
         <div class="row">
           <div class="col-8">
            <div class="icheck-primary">
@@ -55,7 +54,6 @@
           </div>
           <!-- /.col -->
         </div>
-           <span id="error_msg" style="color:red;"></span>
       </form>
 
       <!-- <p class="mb-1">
@@ -80,9 +78,6 @@
 <script src="../template_files/cookie_js/js.cookie.min.js"></script>
 <script src="js/index.js" type="text/javascript"></script>
 <script src="../template_files/encryption/aes.js" type="text/javascript"></script>
-<script src="../include/global.js" type="text/javascript"></script>
-<script src="../template_files/sweetalert2/sweetalert2.min.js"></script>
-<script src="../template_files/toastr/toastr.min.js"></script>
-<script src="../template_files/toast_js/toast_function.js"></script>
 
+<script src="../include/global.js" type="text/javascript"></script>
 </body></html>

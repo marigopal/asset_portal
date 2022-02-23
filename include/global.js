@@ -327,14 +327,7 @@ function toastr_error_pagereload()
         window.location.reload();
     }, 2000);
 }
-function toastr_error_msg(msg)
-{
-    toastr.error(msg);
-    setTimeout(function () {
-//        window.location.reload();
-        table.ajax.reload();
-    }, 2000);
-}
+
 function toastr_error_msg(msg)
 {
     toastr.error(msg);

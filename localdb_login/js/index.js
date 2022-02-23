@@ -7,7 +7,7 @@ $("form").on("submit", function (e)
         data: dataString,
         success: function (result)
         {
-               
+
             result = result.replaceAll('\n', '');
             var _result = $.parseJSON(result);
             var userid = _result[0].user;
@@ -30,14 +30,6 @@ $("form").on("submit", function (e)
                 Cookies.set('remember_me', generateUID());
                 Cookies.set('user_id', userid);
                 window.location.href = "/users/profile?id=" + userid;
-            }
-             else if (_result[0].login == 0 )
-            {
-               $("#error_msg").text("Please check your Account credential..!");
-            }
-            else if (_result[0].login == 3 )
-            {
-               $("#error_msg").text("Your account not available in database. Please contact Administrator..!");
             }
         }
     });

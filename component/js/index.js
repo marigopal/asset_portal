@@ -1,10 +1,10 @@
 var url_string = window.location.href;
 var url = new URL(url_string);
-var _filter = url.searchParams.get("filter");
+var _id = url.searchParams.get("id");
 $.ajax({
     url: "viewlist/all_assets_viewlist.php",
     type: "POST",
-    data: {filter: _filter},
+    data: {_id: _id},
     cache: false,
     success: function (data) {
         $('#_index_component_list').html(data);
@@ -13,6 +13,7 @@ $.ajax({
 });
 $(document).ready(function () {
     load_suppliers('invupd_supplier');
+    load_assetcategory('asset_category_select');
 });
 function delete_row(id)
 {
@@ -72,13 +73,13 @@ function checkinconfirm(id)
 {
     $("#compo_removeuid").val(id);
 }
-$("#confirmcheckinbutton").click(function(){
+$("#confirmcheckinbutton").click(function () {
     var compo_removeuid = $("#compo_removeuid").val();
-     $.ajax
+    $.ajax
             ({
                 type: "POST",
                 url: "db/checkinasset.php",
-                data: '&compo_removeuid=' + compo_removeuid ,
+                data: '&compo_removeuid=' + compo_removeuid,
                 datatype: "html",
                 success: function (result)
                 {
@@ -97,7 +98,7 @@ $("#confirmcheckinbutton").click(function(){
 
 function load_invoicelist(ddlName, selectedvalue)
 {
-    var invupd_supplier= $("#invupd_supplier").val();
+    var invupd_supplier = $("#invupd_supplier").val();
     $.ajax({
         type: "POST",
         url: "db/load_invoice.php",
@@ -117,7 +118,7 @@ function load_invoicelist(ddlName, selectedvalue)
                 if (selectedvalue != null) {
                     $('#' + ddlName).val(selectedvalue);
                 }
-            } 
+            }
         },
         error: function (err) {
             console.log(err);
@@ -128,7 +129,7 @@ function invoice_update(id)
 {
     $("#invupd_comid").val(id);
 }
-$("#saveinvupd_button").click(function(){
+$("#saveinvupd_button").click(function () {
     var invupd_comid = $("#invupd_comid").val();
     var invupd_invno = $("#invupd_invno").val();
     $.ajax
@@ -150,4 +151,13 @@ $("#saveinvupd_button").click(function(){
                     }
                 }
             });
+});
+$("#asset_category_select").change(function () {
+    
+    var val = $(this).val(); // get selected value
+    var urlparam = "index? id=" + val;
+    if (url) { // require a URL
+        window.location = urlparam; // redirect
+    }
+    return false;
 });

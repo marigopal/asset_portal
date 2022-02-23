@@ -19,31 +19,20 @@ include ("modals/asset_assign_user.php");
             </div>
         </div>
     </section>
-
+    <?php include('component_widget.php'); ?>
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <div class="row">
-                    <div class="col-12 col-sm-2">
-                        <div class="form-group">
-                            <select class="form-control" id="asset_category_select" name="asset_category_select" required="">
-                                <option>Select Category</option>
-                            </select>
-                          
+                        <div class="col-12 col-sm-2">
+                            <div class="form-group">
+                                <select class="form-control" id="asset_category_select" name="asset_category_select">
+                                    <option>Select Category</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                         <div class="col-12 col-sm-2">
-                        <div class="form-group">
-                            <select class="form-control" id="asset_category_select" name="asset_category_select" required="">
-                                <option>Select Status</option>
-                            </select>
-                          
-                        </div>
-                    </div>
-                        
-                    </div>
-                    
                     <div class="card">
                         <div class="card-header">
 
@@ -64,6 +53,7 @@ include ("modals/asset_assign_user.php");
                                         <th>Model No</th>
                                         <th>Serial</th>
                                         <th>warranty</th>
+                                        <th>Status</th>
                                         <th>Assigned User</th>
                                         <th width="10%">Action</th>
                                     </tr>

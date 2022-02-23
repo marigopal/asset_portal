@@ -1,23 +1,23 @@
 
 $(document).ready(function () {
+
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var _id = url.searchParams.get("id");
     load_assetcategory('category');
     load_manufacturer('manufacturer');
     load_model('model');
     load_users('user');
-    var url_string = window.location.href;
-var url = new URL(url_string);
-var _id = url.searchParams.get("id");
-var redirect_url = url.searchParams.get("redirect_url");
-if (_id != undefined) {
-    load_data(_id);
-}
-else
-{
-    $("#category").removeAttr('readonly',false);
- 
-    $("#assettag_div").attr("hidden",true);
-    
-}
+    var redirect_url = url.searchParams.get("redirect_url");
+    if (_id != undefined) {
+        load_data(_id);
+    } else
+    {
+        $("#category").removeAttr('readonly', false);
+
+        $("#assettag_div").attr("hidden", true);
+
+    }
 });
 function load_data(_id) {
     $.ajax({
@@ -34,25 +34,24 @@ function load_data(_id) {
                 {
                     var asset_tag = result[i]['asset_tag'];
                     var warranty = result[i]['warranty'];
-                    var category_ = result[i]['category'];
+                    var from_category_ = result[i]['category'];
                     var manufacturer_ = result[i]['manufacturer'];
                     var model_ = result[i]['model'];
                     var serialno = result[i]['serialno'];
                     var remarks = result[i]['remarks'];
-                    
-                    var assigned_user_ = result[i]['assigned_user'];
+                    var from_assigned_user = result[i]['assigned_user'];
                     if (len > 0)
                     {
                         $("#comp_uid").val(_id);
                         $("#asset_tag").val(asset_tag);
                         $("#warranty").val(warranty);
-                        $("#category").val(category_);
+                        $("#category").val(from_category_);
                         $("#manufacturer").val(manufacturer_);
                         $("#model").val(model_);
                         $("#serial").val(serialno);
                         $("#remarks").val(remarks);
-                        $("#user").val(assigned_user_);
-                        
+                        $("#user").val(from_assigned_user);
+
                     }
                 }
             }
@@ -76,31 +75,31 @@ $("#savecomponent_btn").click(function () {
     {
         isNew = true;
     }
-    
-        $.ajax
-                ({
-                    type: "POST",
-                    url: "db/db_manage_asset.php",
-                    data: 'isNew=' + isNew.toString() + '&comp_uid=' + comp_uid + '&category=' + category + '&asset_category_name=' + asset_category_name + '&asset_tag=' + asset_tag + '&warranty=' + warranty + '&manufacturer=' + manufacturer + '&model=' + model + '&serial=' + serial + '&remarks=' + remarks + '&user=' + user ,
-                    datatype: "html",
-                    success: function (result)
+
+    $.ajax
+            ({
+                type: "POST",
+                url: "db/db_manage_asset.php",
+                data: 'isNew=' + isNew.toString() + '&comp_uid=' + comp_uid + '&category=' + category + '&asset_category_name=' + asset_category_name + '&asset_tag=' + asset_tag + '&warranty=' + warranty + '&manufacturer=' + manufacturer + '&model=' + model + '&serial=' + serial + '&remarks=' + remarks + '&user=' + user,
+                datatype: "html",
+                success: function (result)
+                {
+                    if (result.trim() == 1)
                     {
-                        if (result.trim() == 1)
+                        if (isNew == true)
                         {
-                            if (isNew == true)
-                            {
-                                toastr_success('Added Successfully.', '../component/');
-                            } else
-                            {
-                                toastr_success('Updated Successfully.', '../component/');
-                            }
+                            toastr_success('Added Successfully.', '../component/');
                         } else
                         {
-                            toastr_error();
+                            toastr_success('Updated Successfully.', '../component/');
                         }
+                    } else
+                    {
+                        toastr_error();
                     }
-                });
- 
+                }
+            });
+
 });
 
 $("#cancel_button").click(function () {
