@@ -85,8 +85,8 @@ require './get_assetcategory.php';
                                 </button>
                             </div>
                         </div>
-                        <div class="card-body" id="">
-                            <canvas id="mycanvas"></canvas>
+                        <div class="card-body" id="donutchart">
+
 
 
                         </div>
@@ -95,13 +95,13 @@ require './get_assetcategory.php';
                     <!-- /.card -->
 
                     <!-- Area chart -->
-
+                    
                     <!-- /.card -->
 
                 </div>
                 <!-- /.col -->
 
-
+                
                 <!-- /.col -->
             </div>
         </div>
@@ -109,47 +109,28 @@ require './get_assetcategory.php';
 </div>
 <?php include('../include/footer.php'); ?>
 <?php include('../include/script.php'); ?>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
+    google.charts.load('current', {'packages': ['corechart']});
+    // Draw the pie chart when Charts is loaded.
+    google.charts.setOnLoadCallback(draw_my_chart);
+    // Callback that draws the pie chart
+    function draw_my_chart() {
+        // Create the data table .
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'category_name');
+        data.addColumn('number', 'count');
+        for (i = 0; i < my_2d.length; i++)
+            data.addRow([my_2d[i][0], parseInt(my_2d[i][1])]);
+// above row adds the JavaScript two dimensional array data into required chart format
+        var options = {
+            pieHole: 0.10,
+           
 
-    $(document).ready(function () {
-        $.ajax({
-            url: "data.php",
-            method: "GET",
-            success: function (data) {
-                console.log(data);
-                var category_name = [];
-                var count = [];
+        };
 
-                for (var i in data) {
-                    category_name.push(data[i].category_name);
-                    count.push(data[i].count);
-                }
-
-                var chartdata = {
-                    labels: category_name,
-                    datasets: [
-                        {
-                            label: 'Component Count',
-                            backgroundColor: '#418ff0',
-                            borderColor: 'rgba(200, 200, 200, 0.75)',
-                            hoverBackgroundColor: 'blue',
-                            hoverBorderColor: 'rgba(200, 200, 200, 1)',
-                            data: count
-                        }
-                    ]
-                };
-//                alert(chartdata);
-                var ctx = $("#mycanvas");
-
-                var barGraph = new Chart(ctx, {
-                    type: 'bar',
-                    data: chartdata
-                });
-            },
-            error: function (data) {
-                console.log(data);
-            }
-        });
-    });</script>
+        // Instantiate and draw the chart
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+    }
+</script>

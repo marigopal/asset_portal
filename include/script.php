@@ -36,11 +36,6 @@
 <script src="../template_files/plugins/bs-stepper/js/bs-stepper.min.js"></script>
 <script src="../template_files/plugins/dropzone/min/dropzone.min.js"></script>
 
-<script src="../../plugins/flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="../../plugins/flot/plugins/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="../../plugins/flot/plugins/jquery.flot.pie.js"></script>
 
 <script>
 function systemlogout(){
