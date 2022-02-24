@@ -14,6 +14,7 @@ $.ajax({
 $(document).ready(function () {
     load_suppliers('invupd_supplier');
     load_assetcategory('asset_category_select');
+    load_assetstatus('statuslist_select');
 });
 function delete_row(id)
 {
@@ -153,11 +154,46 @@ $("#saveinvupd_button").click(function () {
             });
 });
 $("#asset_category_select").change(function () {
-    
-    var val = $(this).val(); // get selected value
-    var urlparam = "index? id=" + val;
-    if (url) { // require a URL
-        window.location = urlparam; // redirect
+    var withoutparms = window.location.href.split('?')[0];
+    var val = $(this).val();
+    var redirect_parm = withoutparms + "?id=" + val;
+    if (redirect_parm) {
+        window.location = redirect_parm;
     }
-    return false;
+
+});
+
+function statuschange_asset(id)
+{
+    $("#statuschange_uid").val(id);
+}
+$("#savestatus_asset_btn").click(function () {
+    var statuschange_uid = $("#statuschange_uid").val();
+    var statuslist_select = $("#statuslist_select").val();
+    var statuschangetext = $("#statuschangetext").val();
+    $.ajax
+            ({
+                type: "POST",
+                url: "db/statusasset_update.php",
+                data: '&statuschange_uid=' + statuschange_uid + '&statuslist_select=' + statuslist_select + '&statuschangetext=' + statuschangetext,
+                datatype: "html",
+                success: function (result)
+                {
+                    if (result.trim() == 1)
+                    {
+
+                        toastr_success('Status Updated Successfully..!', '');
+                    } else
+                    {
+                        toastr_error();
+                    }
+                }
+            });
+
+});
+
+$("#statuslist_select").change(function () {
+    var statuschangetext = $("#statuslist_select option:selected").text();
+    $("#statuschangetext").val(statuschangetext);
+
 });

@@ -1,22 +1,16 @@
-
 $(document).ready(function () {
-
     var url_string = window.location.href;
     var url = new URL(url_string);
     var _id = url.searchParams.get("id");
-    load_assetcategory('category');
-    load_manufacturer('manufacturer');
-    load_model('model');
-    load_users('user');
-    var redirect_url = url.searchParams.get("redirect_url");
     if (_id != undefined) {
         load_data(_id);
     } else
     {
         $("#category").removeAttr('readonly', false);
-
         $("#assettag_div").attr("hidden", true);
-
+        load_assetcategory('category');
+        load_manufacturer('manufacturer');
+        load_model('model');
     }
 });
 function load_data(_id) {
@@ -39,19 +33,19 @@ function load_data(_id) {
                     var model_ = result[i]['model'];
                     var serialno = result[i]['serialno'];
                     var remarks = result[i]['remarks'];
-                    var from_assigned_user = result[i]['assigned_user'];
                     if (len > 0)
                     {
                         $("#comp_uid").val(_id);
                         $("#asset_tag").val(asset_tag);
                         $("#warranty").val(warranty);
                         $("#category").val(from_category_);
+                        load_assetcategory('category', from_category_);
                         $("#manufacturer").val(manufacturer_);
+                        load_manufacturer('manufacturer', manufacturer_);
                         $("#model").val(model_);
+                        load_model('model', model_);
                         $("#serial").val(serialno);
                         $("#remarks").val(remarks);
-                        $("#user").val(from_assigned_user);
-
                     }
                 }
             }
@@ -69,18 +63,16 @@ $("#savecomponent_btn").click(function () {
     var model = $("#model").val();
     var serial = $("#serial").val();
     var remarks = $("#remarks").val();
-    var user = $("#user").val();
     add_disabled('savecomponent_btn');
     if (comp_uid == '')
     {
         isNew = true;
     }
-
     $.ajax
             ({
                 type: "POST",
                 url: "db/db_manage_asset.php",
-                data: 'isNew=' + isNew.toString() + '&comp_uid=' + comp_uid + '&category=' + category + '&asset_category_name=' + asset_category_name + '&asset_tag=' + asset_tag + '&warranty=' + warranty + '&manufacturer=' + manufacturer + '&model=' + model + '&serial=' + serial + '&remarks=' + remarks + '&user=' + user,
+                data: 'isNew=' + isNew.toString() + '&comp_uid=' + comp_uid + '&category=' + category + '&asset_category_name=' + asset_category_name + '&asset_tag=' + asset_tag + '&warranty=' + warranty + '&manufacturer=' + manufacturer + '&model=' + model + '&serial=' + serial + '&remarks=' + remarks,
                 datatype: "html",
                 success: function (result)
                 {
@@ -99,15 +91,9 @@ $("#savecomponent_btn").click(function () {
                     }
                 }
             });
-
-});
-
-$("#cancel_button").click(function () {
-
-    location.href = "../" + redirect_url;
 });
 $("#category").change(function () {
     var assetcategory_text = $("#category option:selected").text();
     $("#asset_category_name").val(assetcategory_text);
 
-})
+});

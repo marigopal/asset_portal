@@ -100,18 +100,6 @@ include('../include/menu/menu.php');
                     <div class="row d-flex justify-content-center">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label>User
-                                    </label>
-                                <select class="form-control" id="user" name="user"></select>                            
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
                                 <label>Upload Image</label>
                                 <input type="file" id="image_upload" name="file" />
                                 <input type="hidden" value="Upload" id="button_upload_image">

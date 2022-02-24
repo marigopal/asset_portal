@@ -27,6 +27,7 @@ include ("modals/asset_assign_user.php");
                     <div class="row">
                         <div class="col-12 col-sm-2">
                             <div class="form-group">
+                                <label>Category</label>
                                 <select class="form-control" id="asset_category_select" name="asset_category_select">
                                     <option>Select Category</option>
                                 </select>
@@ -45,6 +46,7 @@ include ("modals/asset_assign_user.php");
                                     <tr>
                                         <th width="10%">#</th>
                                         <th hidden="">ID</th>
+                                        <th>Inv Date</th>
                                         <th>Inv No</th>
                                         <th>Asset Tag</th>
                                         <th>Category</th>
@@ -69,4 +71,4 @@ include ("modals/asset_assign_user.php");
 </div>
 <?php include('../include/footer.php'); ?>
 <?php include('../include/script.php'); ?>
-<script src="js/asset.js" type="text/javascript"></script>
+<script src="js/all_comp.js" type="text/javascript"></script>

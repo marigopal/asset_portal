@@ -69,4 +69,4 @@ include ("modals/asset_assign_user.php");
 </div>
 <?php include('../include/footer.php'); ?>
 <?php include('../include/script.php'); ?>
-<script src="js/asset.js" type="text/javascript"></script>
+<script src="js/all_comp.js" type="text/javascript"></script>

@@ -1,6 +1,10 @@
 <aside class="control-sidebar control-sidebar-dark"></aside>
 </div>
-
+<script>
+            $(document).ready(function () {
+                $("#menu_button").trigger('click');
+            });
+        </script>
 <script src="../include/global.js" type="text/javascript"></script>
 
 <script src="../template_files/plugins/jquery/jquery.min.js"></script>

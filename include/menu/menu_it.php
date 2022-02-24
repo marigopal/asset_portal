@@ -40,17 +40,12 @@ include('../include/function_php_encryption.php');
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </a>
-                </li>
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                         <span class="d-none d-md-inline"><?php
                             $currentuserid = decrypt($_COOKIE['user_id']);
                             echo ${strtoupper($currentuserid) . 'firstname'};
-                            ?></span>
+                e            ?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <li class="user-header bg-primary">
@@ -60,7 +55,7 @@ include('../include/function_php_encryption.php');
                             </p>
                         </li>
                         <li class="user-footer">
-                            <a href="#" class="btn btn-default btn-flat"><i class="fas fa-user-secret"></i></a>
+                            <a href="../users/profile?id=<?php echo encrypt($currentuserid);?>" class="btn btn-default btn-flat"><i class="fas fa-user-secret"></i></a>
                             <a href="javascript:void(0)" onclick="systemlogout(this)" class="btn btn-default btn-flat float-right"><i class="fas fa-power-off"></i></a>
                         </li>
                     </ul>
@@ -181,6 +176,12 @@ include('../include/function_php_encryption.php');
                                         <p>Companies</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="../company/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>LDAP Connect</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -188,8 +189,4 @@ include('../include/function_php_encryption.php');
                 </nav>
             </div>
         </aside>
-        <script>
-            $(document).ready(function () {
-                $("#menu_button").trigger('click');
-            });
-        </script>
+        

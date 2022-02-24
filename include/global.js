@@ -29,6 +29,33 @@ function load_countries(ddlName, selectedvalue) {
         }
     });
 }
+function load_assetstatus(ddlName, selectedvalue) {
+    $.ajax({
+        type: "POST",
+        url: "../include/db/load_assetstatuslist.php",
+        data: {},
+        success: function (_result)
+        {
+            var result = JSON.parse(_result.replace('\n', ''));
+            $('#' + ddlName).empty();
+            var select_li_txt = "<option value=''>Select</option>";
+            $('#' + ddlName).append(select_li_txt);
+            if (result != '')
+            {
+                $.each(result, function (i) {
+                    var li_txt = "<option value='" + result[i].status_uid + "'>" + result[i].status_name + "</option>";
+                    $('#' + ddlName).append(li_txt);
+                });
+                if (selectedvalue != null) {
+                    $('#' + ddlName).val(selectedvalue);
+                }
+            } 
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
 function load_users(ddlName, selectedvalue) {
     $.ajax({
         type: "POST",
@@ -339,8 +366,10 @@ function toastr_error_msg(msg)
 function generateDTable(tablename) {
     $("#" + tablename).DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
         "scrollX": true
+        
     }).buttons().container().appendTo('#' + tablename + '_wrapper .col-md-6:eq(0)');
 }
 function modal_hide(id)

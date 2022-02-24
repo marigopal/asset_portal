@@ -33,3 +33,20 @@ $("#delete_button").click(function ()
                 }
             });
 });
+$(document).ready(function () {
+    load_suppliers('invupd_supplier');
+    load_assetcategory('asset_category_select');
+});
+$("#asset_category_select").change(function () {
+    
+    var val = $(this).val(); // get selected value
+    if(url_string == '')
+    {
+        var url_string = url_string + "index";
+    }
+    var urlparam = url_string +"?id="+ val;
+    if (urlparam) { // require a URL
+        window.location = urlparam; // redirect
+    }
+    return false;
+});

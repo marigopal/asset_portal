@@ -91,3 +91,36 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="asset_statuschange_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <div class="form-group" >
+                                <label>Unique ID<span class="required text-red">*</span></label>
+                                <input type="text" class="form-control" id="statuschange_uid" name="statuschange_uid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 ">
+                            <div class="form-group">
+                                <label>Status<span class="required text-red">*</span></label>
+                                <select class="form-control" id="statuslist_select" name="statuslist_select">
+                                </select>
+                                <input type="hidden" class="form-control" id="statuschangetext" name="statuschangetext">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="savestatus_asset_btn" name="savestatus_asset_btn">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
