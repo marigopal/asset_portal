@@ -7,7 +7,7 @@ if (isset($_POST['remember'])) {
 
 if ($_POST['login_auth'] == 1)
 {
-  // echo "ad enter";
+  echo "ad enter";
   $adServer = 'PacDC2.Pactronindia.org';
   $ldap = ldap_connect($adServer);
   $username = $_POST['username'];
@@ -16,7 +16,7 @@ if ($_POST['login_auth'] == 1)
   ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
   ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
   $bind = @ldap_bind($ldap, $ldaprdn, $password);
-
+  echo $bind;
     if ($bind) {
 
       $filter = "(sAMAccountName=$username)";
@@ -25,19 +25,12 @@ if ($_POST['login_auth'] == 1)
       $info = ldap_get_entries($ldap, $result);
       $username = strtoupper($username);
 
-      local_loginchk();
-    }
-    else {
-      echo "[{\"login\":\"0\"}]";
+      // local_loginchk();
     }
 }
-  else if($_POST['login_auth'] == 2){
-
+  else {
   local_loginchk();
-}
-else {
-    echo "[{\"login\":\"4\"}]";
-}
+  }
 
 
 function local_loginchk() {
@@ -51,7 +44,7 @@ function local_loginchk() {
     $check_user = "select count(*) as cntUser,users_uid,is_firstlogin,user_access from tbl_users WHERE username = '". $_POST['username'] ."' AND password = '".$pass ."' AND `is_deleted` = '0' GROUP BY users_uid";
   }
 
-    // echo $check_user; exit();
+    echo $check_user; exit();
         $result = mysqli_query($con, $check_user);
         $row = mysqli_fetch_array($result);
         $count = $row['cntUser'];

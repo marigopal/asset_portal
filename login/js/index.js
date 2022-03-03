@@ -7,7 +7,7 @@ $("form").on("submit", function (e)
         data: dataString,
         success: function (result)
         {
-               
+
             result = result.replaceAll('\n', '');
             var _result = $.parseJSON(result);
             var userid = _result[0].user;
@@ -33,11 +33,13 @@ $("form").on("submit", function (e)
             }
              else if (_result[0].login == 0 )
             {
-               $("#error_msg").text("Please check your Account credential..!");
+               // $("#error_msg").text("Please check your Account credential..!");
+               toastr_error_msg('Please check your credential');
             }
             else if (_result[0].login == 3 )
             {
-               $("#error_msg").text("Your account not available in database. Please contact Administrator..!");
+               // $("#error_msg").text("Your account not available in database. Please contact Administrator..!");
+               toastr_error_msg('Your account is not available in local database. Please contact Administrator..!');
             }
         }
     });

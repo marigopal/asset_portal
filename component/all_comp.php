@@ -56,6 +56,7 @@ include ("modals/asset_assign_user.php");
                                         <th>Serial</th>
                                         <th>warranty</th>
                                         <th>Status</th>
+                                        <th>Username</th>
                                         <th>Assigned User</th>
                                         <th width="10%">Action</th>
                                     </tr>

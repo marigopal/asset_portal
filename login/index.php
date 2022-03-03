@@ -13,12 +13,13 @@
   <link rel="stylesheet" href="../template_files/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../template_files/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../template_files/toastr/toastr.min.css">
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
-    
+
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
@@ -39,21 +40,31 @@
             </div>
           </div>
         </div>
-         
         <div class="row">
-          <div class="col-8">
-           <div class="icheck-primary">
-              <input type="checkbox" id="remember" name="remember">
-              <label for="remember">
-                Remember Me
-              </label>
+          <div class="col-3">
+
+          </div>
+          <div class="col-9">
+            <div class="form-group">
+              <select class="form-control" id="login_auth" name="login_auth">
+                <option value="1">Windows Authendication</option>
+                <option value="2">Local Authendication</option>
+              </select>
             </div>
           </div>
-          <!-- /.col -->
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+               <input type="checkbox" id="remember" name="remember">
+               <label for="remember">
+                 Remember Me
+               </label>
+             </div>
+          </div>
           <div class="col-4">
               <button type="submit" class="btn btn-primary btn-block" name="but_submit" id="but_submit" >Sign In</button>
           </div>
-          <!-- /.col -->
         </div>
            <span id="error_msg" style="color:red;"></span>
       </form>

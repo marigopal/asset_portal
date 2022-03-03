@@ -87,104 +87,16 @@ include('../include/function_php_encryption.php');
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../dashboard_users/" class="nav-link">
                                 <i class="nav-icon fas fa-server"></i>
-                                <p>Asset Management
-                                    <i class="fas fa-angle-left right"></i>
+                                <p>Assets
+                                    
                                 </p>
                             </a>
-<!--                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="../component/asset" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Asset</p>
-                                    </a>
-                                </li>
-                            </ul>-->
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="../component/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>All</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../invoice/" class="nav-link">
-                                <i class="nav-icon fas fa-print"></i>
-                                <p>Invoice
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../users/" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>Users Management
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-cogs"></i>
-                                <p>Settings
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="../status/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Status</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../models/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Model</p>
-                                    </a>
 
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../category/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Category</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../manufacturers/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Manufacturers</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../suppliers/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Suppliers</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../locations/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Locations</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../company/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Companies</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../company/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>LDAP Connect</p>
-                                    </a>
-                                </li>
-                            </ul>
+                            
                         </li>
+                        
 
                     </ul>
                 </nav>

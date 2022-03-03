@@ -33,6 +33,7 @@ if ($result->num_rows > 0) {
             <td><?php echo $row['serialno']; ?></td>
             <td><?php echo $row['warranty']; ?></td>
             <td><?php echo $row['status_name']; ?></td>
+            <td><?php echo $row['username']; ?></td>
             <td><?php if($row['firstname'] !=''){
             echo $row['firstname'];
             }else {}?></td>
