@@ -1,6 +1,6 @@
 var url_string = window.location.href;
 var url = new URL(url_string);
-var _filter = url.searchParams.get("id");
+var _filter = url.searchParams.get("inv_id");
 $.ajax({
     url: "viewlist/invoice_viewlist.php",
     type: "POST",

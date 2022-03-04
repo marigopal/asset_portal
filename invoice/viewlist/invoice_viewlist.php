@@ -1,8 +1,16 @@
 <?php
 include '../../include/lib_page.php';
 $sno = 0;
-$sql = "SELECT a.invoice_uid,a.invoice_date,a.invoice_no,a.supplier,a.purchase_date,a.purchase_no,a.purchase_cost,a.`inv_filename`,a.is_deleted,b.supplier_uid,b.supplier_name FROM `tbl_invoice` a LEFT JOIN tbl_supplier b on b.supplier_uid = a.supplier WHERE a.is_deleted = '0' ORDER BY a.invoice_date DESC";
-// echo $sql;exit();
+if (!empty($_POST['filter'])) 
+{
+    $filter = decrypt($_POST['filter']);
+    $and = "and a.invoice_uid = '$filter'";
+    
+} else {
+    $and="";
+}
+$sql = "SELECT a.invoice_uid,a.invoice_date,a.invoice_no,a.supplier,a.purchase_date,a.purchase_no,a.purchase_cost,a.`inv_filename`,a.is_deleted,b.supplier_uid,b.supplier_name FROM `tbl_invoice` a LEFT JOIN tbl_supplier b on b.supplier_uid = a.supplier WHERE a.is_deleted = '0' $and ORDER BY a.invoice_date DESC";
+//echo $sql;exit();
 $result = $con->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_array(MYSQLI_BOTH)) {
@@ -13,22 +21,21 @@ if ($result->num_rows > 0) {
             <td><?php echo $row['invoice_date']; ?></td>
             <td>
                 <a href="../component/index?id=<?php echo $row['invoice_no']; ?>" ><?php echo $row['invoice_no']; ?></a>
-                </td>
+            </td>
             <td><?php echo $row['supplier_name']; ?></td>
             <td><?php echo $row['purchase_date']; ?></td>
             <td><?php echo $row['purchase_no']; ?></td>
             <td><?php echo $row['purchase_cost']; ?></td>
             <td>
-               <?php  if($row['inv_filename'] != ''){?>
-            <a href="../image_location/<?php echo $row['inv_filename']; ?>" target="blank"><i class="fas fa-download"></i></a>
-               <?php }?>
+                <?php if ($row['inv_filename'] != '') { ?>
+                    <a href="../image_location/<?php echo $row['inv_filename']; ?>" target="blank"><i class="fas fa-download"></i></a>
+                <?php } ?>
             </td>
             <td>
                 <?php
                 $invoice_uid_encrypt = encrypt($row['invoice_uid']);
                 ?>
                 <a href="../invoice/update?id=<?php echo $invoice_uid_encrypt; ?>" ><i class="fas fa-edit"></i></a>
-                <!--<a href="#" data-toggle="modal" data-target="#leads_task_modal" onclick="add_task('<?php echo $row['invoice_uid'] ?>');"><i class="fas fa-tasks"></i></a>-->
             </td>
         </tr>
         <tr class="expandable-body d-none">
@@ -44,7 +51,6 @@ if ($result->num_rows > 0) {
                             <th>Model</th>
                             <th>Warranty</th>
                             <th>Serial</th>
-                           
                         </tr>
                     </thead>
                     <tbody>
@@ -65,7 +71,6 @@ if ($result->num_rows > 0) {
                                     <td style="width:auto;"><p><?php echo $subrow['models_name']; ?></p></td>
                                     <td style="width:auto;"><p><?php echo $subrow['warranty']; ?></p></td>
                                     <td style="width:auto;"><p><?php echo $subrow['serialno']; ?></p></td>
-                                    
                                 </tr>   
                                 <?php
                             }

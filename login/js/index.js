@@ -15,31 +15,29 @@ $("form").on("submit", function (e)
             if (_result[0].login == 1 && _result[0].isfirst_login != 1)
             {
                 Cookies.set('user_id', userid);
-                window.location.href = "/home/index";
+                window.location.href = "../home/index";
             } else if (_result[0].login == 2 && _result[0].isfirst_login != 1)
             {
                 Cookies.set('remember_me', generateUID());
                 Cookies.set('user_id', userid);
-                window.location.href = "/home/index";
+                window.location.href = "../home/index";
             } else if (_result[0].login == 1 && _result[0].isfirst_login == 1)
             {
                 Cookies.set('user_id', userid);
-                window.location.href = "/users/profile?id=" + userid;
+                window.location.href = "../users/profile?id=" + userid;
             } else if (_result[0].login == 2 && _result[0].isfirst_login == 1)
             {
                 Cookies.set('remember_me', generateUID());
                 Cookies.set('user_id', userid);
-                window.location.href = "/users/profile?id=" + userid;
-            }
-             else if (_result[0].login == 0 )
+                window.location.href = "../users/profile?id=" + userid;
+            } else if (_result[0].login == 0)
             {
-               // $("#error_msg").text("Please check your Account credential..!");
-               toastr_error_msg('Please check your credential');
-            }
-            else if (_result[0].login == 3 )
+                // $("#error_msg").text("Please check your Account credential..!");
+                toastr_error_msg('Please check your credential');
+            } else if (_result[0].login == 3)
             {
-               // $("#error_msg").text("Your account not available in database. Please contact Administrator..!");
-               toastr_error_msg('Your account is not available in local database. Please contact Administrator..!');
+                // $("#error_msg").text("Your account not available in database. Please contact Administrator..!");
+                toastr_error_msg('Your account is not available in local database. Please contact Administrator..!');
             }
         }
     });

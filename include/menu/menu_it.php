@@ -45,13 +45,13 @@ include('../include/function_php_encryption.php');
                         <span class="d-none d-md-inline"><?php
                             $currentuserid = decrypt($_COOKIE['user_id']);
                             echo ${strtoupper($currentuserid) . 'firstname'};
-                            
+
                            ?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <li class="user-header bg-primary">
                             <p>
-                                
+
 <!--                                <small>Member since Nov. 2012</small>-->
                             </p>
                         </li>
@@ -104,6 +104,30 @@ include('../include/function_php_encryption.php');
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="../component/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-server"></i>
+                                <p>License Management
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+<!--                             <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../component/asset" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Asset</p>
+                                    </a>
+                                </li>
+                            </ul>-->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../sw_lic/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All</p>
                                     </a>
@@ -178,7 +202,7 @@ include('../include/function_php_encryption.php');
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../company/" class="nav-link">
+                                    <a href="../ldap_setting/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>LDAP Connect</p>
                                     </a>
@@ -190,4 +214,3 @@ include('../include/function_php_encryption.php');
                 </nav>
             </div>
         </aside>
-        
